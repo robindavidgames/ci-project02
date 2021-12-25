@@ -27,16 +27,37 @@ function assignDice() {
 }
 
 /**
- * Calculates the score of a row.
+ * Blocks placement of divs in same column or row as first dice.
  */
-function calculateRow() {
+function blockDivs() {
 
 }
 
 /**
- * Calculates the score of a column.
+ * Creates an array of values in a row.
  */
-function calculateColumn() {
+function arrayRow() {
+
+}
+
+/**
+ * Creates an array of values in a column.
+ */
+function arrayColumn() {
+
+}
+
+/**
+ * Calculates the score of a row or column array.
+ */
+function calculateArray() {
+
+}
+
+/**
+ * Presents the score on a row or column.
+ */
+function presentArrayScore() {
 
 }
 
