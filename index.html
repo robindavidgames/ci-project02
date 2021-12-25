@@ -5,13 +5,56 @@
         <title>Dice Poker</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, intial-scale=1.0">
-        <meta name="description" content="A playable game of Dice Poker.">
+        <meta name="description" content="A playable game of Solitaire Dice Poker.">
         <meta name="keywords" content="Board games boardgames dice poker">
         <meta name="author" content="Robin David">
         <link rel="stylesheet" href="assets/css/style.css">
     </head>
 
     <body>
+        <!-- Center aligned title, logo, tagline. -->
+        <h1 id="header">Solitaire Dice Poker</h1>
+        <p id="tagline">A game by Robin David</p>
+
+        <!-- Cointaining button to begin a new turn and two dice to roll. -->
+        <div id="dice-roller">
+            <p>Roll dice here.</p>
+        </div>
+
+        <!-- Containing the main play area, where dice values are assigned. -->
+        <div id="play-area">
+            <p>Assign dice here.</p>
+        </div>
+
+        <!-- Non-interactive div, providing scoring cheat-sheet. -->
+        <div id="score-information">
+            <ul>
+                <li>5 straight = 7pt</li>
+                <li>4 straight = 5pt</li>
+                <li>3 straight = 3pt</li>
+                <li>5 of a kind = 6pt</li>
+                <li>4 of a kind = 4pt</li>
+                <li>3 of a kind = 3pt</li>
+                <li>Pair (+) = 1pt</li>
+            </ul>
+        </div>
+
+        <!-- Non-interactive div, providing rules on how to play the game. -->
+        <div id="how-to-play">
+            <p>Roll both dice and place the values into the 5x5 grid. However, on a single turn, you cannot place both die values on the same row or column - both numbers must be placed in entirely separate rows and columns from each other.</p>
+            <p>You do not have to place a die value, if you do not want to.</p>
+            <p>After 13 rounds, each row and each column will score points, based upon the combinations of numbers it contains. For example, a sequence like 2, 3, 4, 5, 6, in any order, will score as a 5-straight. The point values are as follows:</p>
+            <ul>
+                <li>5 straight = 7pt</li>
+                <li>4 straight = 5pt</li>
+                <li>3 straight = 3pt</li>
+                <li>5 of a kind = 6pt</li>
+                <li>4 of a kind = 4pt</li>
+                <li>3 of a kind = 3pt</li>
+                <li>Pair (+) = 1pt</li>
+            </ul>
+            <p>Notice the “+” next to “Pair”. This means that pairs can be scored along with other sequences - ie, another pair, three of a kind, or 3-straight. The pair must be made of values not used in another combination on that row or column.</p>
+        </div>
     
         <script src="assets/js/script.js"></script>
     </body>
