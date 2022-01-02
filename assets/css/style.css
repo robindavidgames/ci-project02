@@ -1,0 +1,46 @@
+/* Remove padding and margin by default. */
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+/* Keep page content in a narrow column. */
+body {
+    width: 750px;
+    margin: 0 auto;
+}
+
+/* Series of rules covering the title and tagline. */
+#header {
+    text-align: center;
+}
+
+#header h1 {
+    font-size: 220%;
+}
+
+/* Div containing round information, dice rolling button, and dice results. */
+#dice-roller {
+    background-color: aqua;
+    border-radius: 15px;
+    padding: 20px;
+    width: 75%;
+    margin: 0 auto;
+    height: 200px;
+}
+
+/* Establish style for all die and number boxes. */
+.die {
+    height: 50px;
+    width: 50px;
+    background-color: whitesmoke;
+    float: left;
+    overflow: hidden;
+    clear: right;
+    margin: 10px;
+}
+
+#play-area {
+    clear: both;
+}

@@ -14,12 +14,18 @@
 
     <body>
         <!-- Center aligned title, logo, tagline. -->
-        <h1 id="header">Solitaire Dice Poker</h1>
-        <p id="tagline">A game by Robin David</p>
+        <div id="header">
+            <h1>Solitaire Dice Poker</h1>
+            <p>A game by Robin David</p>
+        </div>
 
         <!-- Cointaining button to begin a new turn and two dice to roll. -->
         <div id="dice-roller">
-            <p>Roll dice here.</p>
+            <!-- Inner text of round-tracker to update each round. -->
+            <p id="round-tracker">Roll the dice to begin. <input class="button" type="submit" value="Roll Dice"></p>
+            <!-- Divs to show the two dice available each round. -->
+            <div class="die" id="die1"></div>
+            <div class="die" id="die2"></div>
         </div>
 
         <!-- Containing the main play area, where dice values are assigned. -->
