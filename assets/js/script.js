@@ -1,5 +1,8 @@
 createPlayArea();
-randomiseDice()
+randomiseDice();
+
+// roundNumber controls the length of the game.
+let roundNumber = 0;
 
 /**
  * Create the play area.
@@ -41,8 +44,14 @@ function runGame() {
  * Starts a new turn. Increments turn counter and triggers dice roll.
  */
 function newTurn() {
-
+    roundNumber += 1;
+    document.getElementById("round-tracker").innerHTML = `Round ${roundNumber} of 13.`
+    randomiseDice();
 }
+
+// Event listener for the above function.
+let newTurnButton = document.getElementById("new-turn");
+newTurnButton.addEventListener("click", newTurn);
 
 /**
  * Randomises the two dice values, between 1 and 6 and prints them in the die roller spaces.
@@ -51,10 +60,8 @@ function newTurn() {
 function randomiseDice() {
     let num1 = Math.floor(Math.random() * 6) + 1;
     let num2 = Math.floor(Math.random() * 6) + 1;
-    let die1 = document.getElementById("die1");
-    die1.textContent = num1;
-    let die2 = document.getElementById("die2");
-    die2.textContent = num2;
+    document.getElementById('die1').textContent = num1;
+    document.getElementById('die2').textContent = num2;
 }
 
 /**
