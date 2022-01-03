@@ -1,8 +1,11 @@
 createPlayArea();
-randomiseDice();
+// randomiseDice();
 
 // roundNumber controls the length of the game.
 let roundNumber = 0;
+
+// playerValue contains the die value the player wishes to use.
+let playerValue = "";
 
 /**
  * Create the play area.
@@ -65,11 +68,28 @@ function randomiseDice() {
 }
 
 /**
- * Allows user to click on a dice and assign that value to a game space.
+ * Allows user to click on first die and assign that value to a game space.
  */
-function assignDice() {
-
+function assignDice1() {
+    playerValue = parseInt(document.getElementById('die1').innerText);
+    console.log("Die value chosen is " + playerValue);
 }
+
+/**
+ * Allows user to click on second die and assign that value to a game space.
+ */
+ function assignDice2() {
+    playerValue = parseInt(document.getElementById('die2').innerText);
+    console.log("Die value chosen is " + playerValue);
+}
+
+// Event listener for clicking the first die.
+let clickDie1 = document.getElementById("die1");
+clickDie1.addEventListener("click", assignDice1);
+
+// Event listener for clicking the second die.
+let clickDie2 = document.getElementById("die2");
+clickDie2.addEventListener("click", assignDice2);
 
 /**
  * Blocks placement of divs in same column or row as first dice.
