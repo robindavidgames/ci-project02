@@ -1,5 +1,4 @@
 createPlayArea();
-// randomiseDice();
 
 // roundNumber controls the length of the game.
 let roundNumber = 0;
@@ -17,7 +16,7 @@ function createPlayArea() {
         // In each set, create 5 regular dice containers.
         for (let i = 0; i < 5; i++) {
             let element = document.createElement("div");
-            element.setAttribute("class", "die");
+            element.setAttribute("class", "die play-space");
             element.setAttribute("id", "value"+h+i);
             dieWrapper.appendChild(element);
         }
@@ -68,28 +67,41 @@ function randomiseDice() {
 }
 
 /**
- * Allows user to click on first die and assign that value to a game space.
+ * Allows user to click on first die.
  */
-function assignDice1() {
+function selectDice1() {
     playerValue = parseInt(document.getElementById('die1').innerText);
     console.log("Die value chosen is " + playerValue);
 }
 
 /**
- * Allows user to click on second die and assign that value to a game space.
+ * Allows user to click on second die.
  */
- function assignDice2() {
+ function selectDice2() {
     playerValue = parseInt(document.getElementById('die2').innerText);
     console.log("Die value chosen is " + playerValue);
 }
 
 // Event listener for clicking the first die.
 let clickDie1 = document.getElementById("die1");
-clickDie1.addEventListener("click", assignDice1);
+clickDie1.addEventListener("click", selectDice1);
 
 // Event listener for clicking the second die.
 let clickDie2 = document.getElementById("die2");
-clickDie2.addEventListener("click", assignDice2);
+clickDie2.addEventListener("click", selectDice2);
+
+/**
+ * Allows user to place values in the play spaces.
+ */
+function assignDice() {
+    console.log("User clicked div with ID " + this.id);
+}
+
+// Event listener for assigning values in play spaces.
+let clickPlaySpace = document.getElementsByClassName("play-space");
+for (let i = 0; i < clickPlaySpace.length; i++) {
+    clickPlaySpace[i].addEventListener("click", assignDice);
+}
 
 /**
  * Blocks placement of divs in same column or row as first dice.
