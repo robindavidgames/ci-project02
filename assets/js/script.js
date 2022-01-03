@@ -4,11 +4,16 @@ createPlayArea();
  * Create the play area.
  */
 function createPlayArea() {
-    for (let i = 0; i < 5; i++) {
-        let element = document.createElement("div");
-        element.classList.add("die")
-        let dieWrapper = document.getElementById("play-area");
-        dieWrapper.appendChild(element);
+    let dieWrapper = document.getElementById("play-area");
+    for (let h = 0; h < 5; h++) {
+        for (let i = 0; i < 5; i++) {
+            let element = document.createElement("div");
+            element.classList.add("die");
+            dieWrapper.appendChild(element);
+        }
+        let sumElement = document.createElement("div");
+        sumElement.classList.add("sumDie");
+        dieWrapper.appendChild(sumElement);
     }
 }
 

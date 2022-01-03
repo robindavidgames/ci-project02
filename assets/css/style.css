@@ -50,3 +50,13 @@ body {
     clear: right;
     margin: 10px;
 }
+
+.sumDie {
+    height: 50px;
+    width: 50px;
+    background-color: burlywood;
+    float: left;
+    overflow: hidden;
+    clear: right;
+    margin: 10px;
+}
