@@ -5,14 +5,27 @@ createPlayArea();
  */
 function createPlayArea() {
     let dieWrapper = document.getElementById("play-area");
+    // Create 5 sets of dice.
     for (let h = 0; h < 5; h++) {
+        // In each set, create 5 regular dice.
         for (let i = 0; i < 5; i++) {
             let element = document.createElement("div");
-            element.classList.add("die");
+            element.setAttribute("class", "die");
+            element.setAttribute("id", "value"+h+i);
+            // element.classList.add("die");
             dieWrapper.appendChild(element);
         }
+        // At end of each set, create one summative die.
         let sumElement = document.createElement("div");
         sumElement.classList.add("sumDie");
+        sumElement.setAttribute("id", "sum"+h);
+        dieWrapper.appendChild(sumElement);
+    }
+    // Create one final set of 5 summative dice.
+    for (let j = 5; j < 10; j++) {
+        let sumElement = document.createElement("div");
+        sumElement.classList.add("sumDie");
+        sumElement.setAttribute("id", "sum"+j);
         dieWrapper.appendChild(sumElement);
     }
 }

@@ -46,8 +46,8 @@ body {
     width: 50px;
     background-color: whitesmoke;
     float: left;
-    overflow: hidden;
-    clear: right;
+    /* overflow: hidden; */
+    /* clear: right; */
     margin: 10px;
 }
 
@@ -56,7 +56,12 @@ body {
     width: 50px;
     background-color: burlywood;
     float: left;
-    overflow: hidden;
-    clear: right;
+    /* overflow: hidden; */
+    /* clear: left; */
     margin: 10px;
+}
+
+/* Create a new line for each set of dice. */
+#value10, #value20, #value30, #value40, #sum5 {
+    clear: both;
 }
