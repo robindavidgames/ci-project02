@@ -1,3 +1,17 @@
+createPlayArea();
+
+/**
+ * Create the play area.
+ */
+function createPlayArea() {
+    for (let i = 0; i < 5; i++) {
+        let element = document.createElement("div");
+        element.classList.add("die")
+        let dieWrapper = document.getElementById("play-area");
+        dieWrapper.appendChild(element);
+    }
+}
+
 /**
  * Begins the game on page load.
  */

@@ -30,6 +30,16 @@ body {
     height: 200px;
 }
 
+#play-area {
+    background-color: wheat;
+    border-radius: 15px;
+    padding: 20px;
+    width: 75%;
+    margin: 0 auto;
+    height: 600px;
+    clear: both;
+}
+
 /* Establish style for all die and number boxes. */
 .die {
     height: 50px;
@@ -39,8 +49,4 @@ body {
     overflow: hidden;
     clear: right;
     margin: 10px;
-}
-
-#play-area {
-    clear: both;
 }
