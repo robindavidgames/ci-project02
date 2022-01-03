@@ -1,27 +1,27 @@
 createPlayArea();
+randomiseDice()
 
 /**
  * Create the play area.
  */
 function createPlayArea() {
     let dieWrapper = document.getElementById("play-area");
-    // Create 5 sets of dice.
+    // Create 5 sets of dice containers.
     for (let h = 0; h < 5; h++) {
-        // In each set, create 5 regular dice.
+        // In each set, create 5 regular dice containers.
         for (let i = 0; i < 5; i++) {
             let element = document.createElement("div");
             element.setAttribute("class", "die");
             element.setAttribute("id", "value"+h+i);
-            // element.classList.add("die");
             dieWrapper.appendChild(element);
         }
-        // At end of each set, create one summative die.
+        // At end of each set, create one row summative die container.
         let sumElement = document.createElement("div");
         sumElement.classList.add("sumDie");
         sumElement.setAttribute("id", "sum"+h);
         dieWrapper.appendChild(sumElement);
     }
-    // Create one final set of 5 summative dice.
+    // Create one final set of 5 column summative dice containers.
     for (let j = 5; j < 10; j++) {
         let sumElement = document.createElement("div");
         sumElement.classList.add("sumDie");
@@ -45,10 +45,16 @@ function newTurn() {
 }
 
 /**
- * Randomises the two dice values, between 1 and 6.
+ * Randomises the two dice values, between 1 and 6 and prints them in the die roller spaces.
+ * Modified from Love Maths.
  */
 function randomiseDice() {
-
+    let num1 = Math.floor(Math.random() * 6) + 1;
+    let num2 = Math.floor(Math.random() * 6) + 1;
+    let die1 = document.getElementById("die1");
+    die1.textContent = num1;
+    let die2 = document.getElementById("die2");
+    die2.textContent = num2;
 }
 
 /**
