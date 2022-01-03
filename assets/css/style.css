@@ -46,9 +46,12 @@ body {
     width: 50px;
     background-color: whitesmoke;
     float: left;
-    /* overflow: hidden; */
-    /* clear: right; */
     margin: 10px;
+    text-align: center;
+    font-size: larger;
+    font-weight: 700;
+    line-height: 50px;
+    border-radius: 5px;
 }
 
 .sumDie {

@@ -95,6 +95,7 @@ clickDie2.addEventListener("click", selectDice2);
  */
 function assignDice() {
     console.log("User clicked div with ID " + this.id);
+    this.innerText = playerValue;
 }
 
 // Event listener for assigning values in play spaces.
