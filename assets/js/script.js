@@ -6,6 +6,8 @@ let roundNumber = 0;
 // playerValue contains the die value the player wishes to use.
 let playerValue = "";
 
+let rowValue = [];
+
 /**
  * Create the play area.
  */
@@ -95,7 +97,10 @@ clickDie2.addEventListener("click", selectDice2);
  */
 function assignDice() {
     console.log("User clicked div with ID " + this.id);
-    this.innerText = playerValue;
+    // if (this.class === "die play-space") {
+        this.innerText = playerValue;
+    // }
+    arrayRow();
 }
 
 // Event listener for assigning values in play spaces.
@@ -115,7 +120,15 @@ function blockDivs() {
  * Creates an array of values in a row.
  */
 function arrayRow() {
-
+    // Need to iterate these for all rows
+    let die00 = parseInt(document.getElementById('value00').innerText);
+    let die01 = parseInt(document.getElementById('value01').innerText);
+    let die02 = parseInt(document.getElementById('value02').innerText);
+    let die03 = parseInt(document.getElementById('value03').innerText);
+    let die04 = parseInt(document.getElementById('value04').innerText);
+    rowValue = [die00, die01, die02, die03, die04];
+    console.log(rowValue);
+    calculateArray();
 }
 
 /**
@@ -129,7 +142,14 @@ function arrayColumn() {
  * Calculates the score of a row or column array.
  */
 function calculateArray() {
+    let withNaN = isNaN(rowValue[0]) || isNaN(rowValue[1]) || isNaN(rowValue[2]) || isNaN(rowValue[3]) || isNaN(rowValue[4]);
+    console.log(withNaN);
 
+    if (withNaN) {
+        console.log("There is a NaN value.")
+    } else {
+        console.log("There is no NaN value.")
+    }
 }
 
 /**
