@@ -150,16 +150,26 @@ function arrayColumn() {
  * Calculates the score of a row or column array.
  */
 function calculateArray() {
-    //Check if the row/column is complete.
-    // No longer needed.
-    // let withNaN = isNaN(rowValue[0]) || isNaN(rowValue[1]) || isNaN(rowValue[2]) || isNaN(rowValue[3]) || isNaN(rowValue[4]);
-    // console.log(withNaN);
+    // Create an array with row 1 values.
+    // let array1 = [diceObject['value00'], diceObject['value01'], diceObject['value02'], diceObject['value03'], diceObject['value04']];
+    let array1 = ['a', 'b', 'c', 'd', 'e'];
+    for (i = 0; i < 5; i++) {
+            array1.push(diceObject['value0'+i]);
+    }
+    
+    // Sorting code adapted from https://www.w3schools.com/jsref/jsref_sort.asp
+    array1.sort(function(a, b){return a-b});
+    console.log("Array 1 values are " + array1);
 
-    // if (withNaN) {
-    //     console.log("There is a NaN value.")
-    // } else {
-    //     console.log("There is no NaN value.")
-    // }
+    // Check single pair.
+    // Unfortunately this is allowing undefined to trigger it.
+    // let array1pair = (array1[0] === array1[1] && array1[0] !== null) || (array1[1] === array1[2] && array1[1] !== null) || (array1[2] === array1[3] && array1[2] !== null) || (array1[3] === array1[4] && array1[3] !== null);
+    let array1pair = array1[0] === array1[1] || array1[1] === array1[2] || array1[2] === array1[3] || array1[3] === array1[4];
+    if (array1pair) {
+        console.log("Pair!");
+    }
+
+    // Whatever the final score it, append it as array1[5] and then later print those to the score spaces.
 }
 
 /**
