@@ -105,7 +105,7 @@ function assignDice() {
         diceObject[this.id] = playerValue;
         console.log(diceObject);
     // }
-    arrayRow();
+    calculateArray();
 }
 
 // Event listener for assigning values in play spaces.
@@ -122,37 +122,23 @@ function blockDivs() {
 }
 
 /**
- * Creates an array of values in a row.
- */
-function arrayRow() {
-    // Need to iterate these for all rows
-    // for (let i = 0; i < 5; i++) {
-        
-    // }
-    // let die00 = parseInt(document.getElementById('value00').innerText);
-    // let die01 = parseInt(document.getElementById('value01').innerText);
-    // let die02 = parseInt(document.getElementById('value02').innerText);
-    // let die03 = parseInt(document.getElementById('value03').innerText);
-    // let die04 = parseInt(document.getElementById('value04').innerText);
-    // rowValue = [die00, die01, die02, die03, die04];
-    // console.log(rowValue);
-    calculateArray();
-}
-
-/**
- * Creates an array of values in a column.
- */
-function arrayColumn() {
-
-}
-
-/**
  * Calculates the score of a row or column array.
  */
 function calculateArray() {
     // Create an array with row 1 values.
     // let array1 = [diceObject['value00'], diceObject['value01'], diceObject['value02'], diceObject['value03'], diceObject['value04']];
     let array1 = ['a', 'b', 'c', 'd', 'e'];
+    let array2 = ['a', 'b', 'c', 'd', 'e'];
+    let array3 = ['a', 'b', 'c', 'd', 'e'];
+    let array4 = ['a', 'b', 'c', 'd', 'e'];
+    let array5 = ['a', 'b', 'c', 'd', 'e'];
+    let array6 = ['a', 'b', 'c', 'd', 'e'];
+    let array7 = ['a', 'b', 'c', 'd', 'e'];
+    let array8 = ['a', 'b', 'c', 'd', 'e'];
+    let array9 = ['a', 'b', 'c', 'd', 'e'];
+    let array10 = ['a', 'b', 'c', 'd', 'e'];
+
+    // Add loops for rest of the arrays.
     for (i = 0; i < 5; i++) {
             array1.push(diceObject['value0'+i]);
     }
@@ -162,8 +148,6 @@ function calculateArray() {
     console.log("Array 1 values are " + array1);
 
     // Check single pair.
-    // Unfortunately this is allowing undefined to trigger it.
-    // let array1pair = (array1[0] === array1[1] && array1[0] !== null) || (array1[1] === array1[2] && array1[1] !== null) || (array1[2] === array1[3] && array1[2] !== null) || (array1[3] === array1[4] && array1[3] !== null);
     let array1pair = array1[0] === array1[1] || array1[1] === array1[2] || array1[2] === array1[3] || array1[3] === array1[4];
     if (array1pair) {
         console.log("Pair!");
