@@ -6,7 +6,10 @@ let roundNumber = 0;
 // playerValue contains the die value the player wishes to use.
 let playerValue = "";
 
-let rowValue = [];
+// let rowValue = [];
+
+// diceObject contains all the die values the player has placed.
+let diceObject = {};
 
 /**
  * Create the play area.
@@ -40,9 +43,9 @@ function createPlayArea() {
 /**
  * Begins the game on page load.
  */
-function runGame() {
+// function runGame() {
 
-}
+// }
 
 /**
  * Starts a new turn. Increments turn counter and triggers dice roll.
@@ -53,7 +56,7 @@ function newTurn() {
     randomiseDice();
 }
 
-// Event listener for the above function.
+// Event listener for the New Turn button.
 let newTurnButton = document.getElementById("new-turn");
 newTurnButton.addEventListener("click", newTurn);
 
@@ -99,6 +102,8 @@ function assignDice() {
     console.log("User clicked div with ID " + this.id);
     // if (this.class === "die play-space") {
         this.innerText = playerValue;
+        diceObject[this.id] = playerValue;
+        console.log(diceObject);
     // }
     arrayRow();
 }
@@ -121,13 +126,16 @@ function blockDivs() {
  */
 function arrayRow() {
     // Need to iterate these for all rows
-    let die00 = parseInt(document.getElementById('value00').innerText);
-    let die01 = parseInt(document.getElementById('value01').innerText);
-    let die02 = parseInt(document.getElementById('value02').innerText);
-    let die03 = parseInt(document.getElementById('value03').innerText);
-    let die04 = parseInt(document.getElementById('value04').innerText);
-    rowValue = [die00, die01, die02, die03, die04];
-    console.log(rowValue);
+    // for (let i = 0; i < 5; i++) {
+        
+    // }
+    // let die00 = parseInt(document.getElementById('value00').innerText);
+    // let die01 = parseInt(document.getElementById('value01').innerText);
+    // let die02 = parseInt(document.getElementById('value02').innerText);
+    // let die03 = parseInt(document.getElementById('value03').innerText);
+    // let die04 = parseInt(document.getElementById('value04').innerText);
+    // rowValue = [die00, die01, die02, die03, die04];
+    // console.log(rowValue);
     calculateArray();
 }
 
@@ -142,21 +150,23 @@ function arrayColumn() {
  * Calculates the score of a row or column array.
  */
 function calculateArray() {
-    let withNaN = isNaN(rowValue[0]) || isNaN(rowValue[1]) || isNaN(rowValue[2]) || isNaN(rowValue[3]) || isNaN(rowValue[4]);
-    console.log(withNaN);
+    //Check if the row/column is complete.
+    // No longer needed.
+    // let withNaN = isNaN(rowValue[0]) || isNaN(rowValue[1]) || isNaN(rowValue[2]) || isNaN(rowValue[3]) || isNaN(rowValue[4]);
+    // console.log(withNaN);
 
-    if (withNaN) {
-        console.log("There is a NaN value.")
-    } else {
-        console.log("There is no NaN value.")
-    }
+    // if (withNaN) {
+    //     console.log("There is a NaN value.")
+    // } else {
+    //     console.log("There is no NaN value.")
+    // }
 }
 
 /**
  * Presents the score on a row or column.
  */
 function presentArrayScore() {
-
+ 
 }
 
 /**
