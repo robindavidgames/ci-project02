@@ -10,7 +10,10 @@ let playerValue = "";
 let diceObject = {};
 
 // contains data that blocks certain divs from being usable in a turn.
-let clickedDiv = "";
+// let clickedDiv = "";
+// let columnNum = 0;
+// let rowNum = 0;
+// let divIDused = "value00";
 
 /**
  * Create the play area.
@@ -45,8 +48,17 @@ function createPlayArea() {
  * Starts a new turn. Increments turn counter and triggers dice roll.
  */
 function newTurn() {
+    // Update the round tracker
     roundNumber += 1;
     document.getElementById("round-tracker").innerHTML = `Round ${roundNumber} of 13.`
+    // Reset temporarily blocked spaces
+    // let unblock = document.getElementsByClassName("blocked-play-space");
+    // for (i = 0; i < unblock.length; i++) {
+    //     if (unblock[i].className !== "used-play-space") {
+    //         unblock[i].classList.remove("blocked-play-space");
+    //     }
+    // }
+    // Randomise dice
     randomiseDice();
 }
 
@@ -102,11 +114,12 @@ function assignDice() {
         console.log(diceObject);
         // changes class associated with div so it cannot be reused.
         this.classList.remove("play-space");
-        this.classList.add("used-play-space");
+        // this.classList.add("used-play-space");
         // assigns div id to a var that will block off other divs this turn.
-        clickedDiv = this.id;
+        let clickedDiv = this.id;
+        blockDivs(clickedDiv);
     }
-    blockDivs();
+    
     // calculateArray();
 }
 
@@ -119,13 +132,29 @@ for (let i = 0; i < clickPlaySpace.length; i++) {
 /**
  * Blocks placement of divs in same column or row as first dice.
  */
-function blockDivs() {
+function blockDivs(divValue) {
     //determines row
-    let rowNum = clickedDiv.charAt(5);
-    console.log(rowNum);
+    let rowNum = divValue.charAt(5);
+    console.log("Row clicked is number " + rowNum);
     //determines column
-    let columnNum = clickedDiv.charAt(6);
-    console.log(columnNum);
+    let columnNum = divValue.charAt(6);
+    console.log("Column clicked is number " + columnNum);
+
+    // Change class of all spaces in column, so they are blocked from clicking.
+    for (i = 0; i < 5; i++) {
+        let divIDused = document.getElementById("value" + i + columnNum);
+        // if (divIDused.className !== "used-play-space") {
+            divIDused.classList.remove("play-space");
+            divIDused.classList.add("blocked-play-space");
+        // }
+    }
+
+    // Change class of all spaces in row, so they are blocked from clicking.
+    for (i = 0; i < 5; i++) {
+        let divIDused = document.getElementById("value" + rowNum + i);
+        divIDused.classList.remove("play-space");
+        divIDused.classList.add("blocked-play-space");
+    }
 }
 
 /**

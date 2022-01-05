@@ -54,7 +54,7 @@ body {
     border-radius: 5px;
 }
 
-.used-play-space {
+.used-play-space, .blocked-play-space {
     background-color: turquoise;
 }
 
@@ -63,8 +63,6 @@ body {
     width: 50px;
     background-color: burlywood;
     float: left;
-    /* overflow: hidden; */
-    /* clear: left; */
     margin: 10px;
 }
 
