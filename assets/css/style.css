@@ -54,6 +54,10 @@ body {
     border-radius: 5px;
 }
 
+.used-play-space {
+    background-color: turquoise;
+}
+
 .sumDie {
     height: 50px;
     width: 50px;

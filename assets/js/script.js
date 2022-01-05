@@ -6,8 +6,6 @@ let roundNumber = 0;
 // playerValue contains the die value the player wishes to use.
 let playerValue = "";
 
-// let rowValue = [];
-
 // diceObject contains all the die values the player has placed.
 let diceObject = {};
 
@@ -39,13 +37,6 @@ function createPlayArea() {
         dieWrapper.appendChild(sumElement);
     }
 }
-
-/**
- * Begins the game on page load.
- */
-// function runGame() {
-
-// }
 
 /**
  * Starts a new turn. Increments turn counter and triggers dice roll.
@@ -100,11 +91,13 @@ clickDie2.addEventListener("click", selectDice2);
  */
 function assignDice() {
     console.log("User clicked div with ID " + this.id);
-    // if (this.class === "die play-space") {
+    if (this.classList.contains("play-space")) {
         this.innerText = playerValue;
         diceObject[this.id] = playerValue;
         console.log(diceObject);
-    // }
+        this.classList.remove("play-space");
+        this.classList.add("used-play-space");
+    }
     calculateArray();
 }
 
@@ -152,8 +145,6 @@ function calculateArray() {
     if (array1pair) {
         console.log("Pair!");
     }
-
-    // Whatever the final score it, append it as array1[5] and then later print those to the score spaces.
 }
 
 /**
@@ -166,6 +157,6 @@ function presentArrayScore() {
 /**
  * Calculates total game score.
  */
-function calculateScore() {
+function calculateFinalScore() {
 
 }
