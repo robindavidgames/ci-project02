@@ -9,6 +9,9 @@ let playerValue = "";
 // diceObject contains all the die values the player has placed.
 let diceObject = {};
 
+// contains data that blocks certain divs from being usable in a turn.
+let clickedDiv = "";
+
 /**
  * Create the play area.
  */
@@ -91,14 +94,20 @@ clickDie2.addEventListener("click", selectDice2);
  */
 function assignDice() {
     console.log("User clicked div with ID " + this.id);
+    // If loop checks if the div has already been used.
     if (this.classList.contains("play-space")) {
+        // places the playerValue text in the div.
         this.innerText = playerValue;
         diceObject[this.id] = playerValue;
         console.log(diceObject);
+        // changes class associated with div so it cannot be reused.
         this.classList.remove("play-space");
         this.classList.add("used-play-space");
+        // assigns div id to a var that will block off other divs this turn.
+        clickedDiv = this.id;
     }
-    calculateArray();
+    blockDivs();
+    // calculateArray();
 }
 
 // Event listener for assigning values in play spaces.
@@ -111,7 +120,12 @@ for (let i = 0; i < clickPlaySpace.length; i++) {
  * Blocks placement of divs in same column or row as first dice.
  */
 function blockDivs() {
-
+    //determines row
+    let rowNum = clickedDiv.charAt(5);
+    console.log(rowNum);
+    //determines column
+    let columnNum = clickedDiv.charAt(6);
+    console.log(columnNum);
 }
 
 /**

@@ -4,6 +4,7 @@
 Full House Dice is a JavaScript implementation of an original game that I have designed. It is a casual game for a general audience.
 
 ## Features
+* Javascript code to dynamically create the page elements. This could have been achieved by simply creating 35 divs, but I wanted to see if I could use the JS code to create simpler HTML. Conceivably, I could expand or contract the number of divs in the play area with no change to the HTML.
 
 ## Testing
 
