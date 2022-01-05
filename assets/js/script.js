@@ -52,12 +52,13 @@ function newTurn() {
     roundNumber += 1;
     document.getElementById("round-tracker").innerHTML = `Round ${roundNumber} of 13.`
     // Reset temporarily blocked spaces
-    // let unblock = document.getElementsByClassName("blocked-play-space");
-    // for (i = 0; i < unblock.length; i++) {
-    //     if (unblock[i].className !== "used-play-space") {
-    //         unblock[i].classList.remove("blocked-play-space");
-    //     }
-    // }
+    let unblock = document.getElementsByClassName("die blocked-play-space");
+    for (i = 0; i < unblock.length; i + 1) {
+        if (unblock[i].className !== "used-play-space") {
+            unblock[i].classList.remove("blocked-play-space");
+            unblock[i].classList.add("play-space");
+        }
+    }
     // Randomise dice
     randomiseDice();
 }
@@ -106,15 +107,15 @@ clickDie2.addEventListener("click", selectDice2);
  */
 function assignDice() {
     console.log("User clicked div with ID " + this.id);
-    // If loop checks if the div has already been used.
-    if (this.classList.contains("play-space")) {
+    // If loop checks if the div has not been blocked or already been used.
+    if (this.classList.contains("play-space") && !this.classList.contains("used-play-space")) {
         // places the playerValue text in the div.
         this.innerText = playerValue;
         diceObject[this.id] = playerValue;
         console.log(diceObject);
         // changes class associated with div so it cannot be reused.
         this.classList.remove("play-space");
-        // this.classList.add("used-play-space");
+        this.classList.add("used-play-space");
         // assigns div id to a var that will block off other divs this turn.
         let clickedDiv = this.id;
         blockDivs(clickedDiv);
