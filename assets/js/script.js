@@ -20,6 +20,7 @@ let diceObject = {};
  */
 function createPlayArea() {
     let dieWrapper = document.getElementById("play-area");
+
     // Create 5 sets of dice containers.
     for (let h = 0; h < 5; h++) {
         // In each set, create 5 regular dice containers.
@@ -51,6 +52,7 @@ function newTurn() {
     // Update the round tracker
     roundNumber += 1;
     document.getElementById("round-tracker").innerHTML = `Round ${roundNumber} of 13.`
+
     // Reset temporarily blocked spaces
     let unblock = document.getElementsByClassName("die blocked-play-space");
     for (i = 0; i < unblock.length; i + 1) {
@@ -59,6 +61,7 @@ function newTurn() {
             unblock[i].classList.add("play-space");
         }
     }
+
     // Randomise dice
     randomiseDice();
 }
@@ -107,15 +110,19 @@ clickDie2.addEventListener("click", selectDice2);
  */
 function assignDice() {
     console.log("User clicked div with ID " + this.id);
+
     // If loop checks if the div has not been blocked or already been used.
     if (this.classList.contains("play-space") && !this.classList.contains("used-play-space")) {
+
         // places the playerValue text in the div.
         this.innerText = playerValue;
         diceObject[this.id] = playerValue;
         console.log(diceObject);
-        // changes class associated with div so it cannot be reused.
+
+        // changes class associated with div so the div cannot be reused.
         this.classList.remove("play-space");
         this.classList.add("used-play-space");
+
         // assigns div id to a var that will block off other divs this turn.
         let clickedDiv = this.id;
         blockDivs(clickedDiv);
@@ -134,23 +141,23 @@ for (let i = 0; i < clickPlaySpace.length; i++) {
  * Blocks placement of divs in same column or row as first dice.
  */
 function blockDivs(divValue) {
-    //determines row
+
+    // Determines which row was clicked.
     let rowNum = divValue.charAt(5);
     console.log("Row clicked is number " + rowNum);
-    //determines column
+
+    // Determines which column was clicked.
     let columnNum = divValue.charAt(6);
     console.log("Column clicked is number " + columnNum);
 
-    // Change class of all spaces in column, so they are blocked from clicking.
+    // Change class of all spaces in column, so they are blocked from clicking this turn.
     for (i = 0; i < 5; i++) {
         let divIDused = document.getElementById("value" + i + columnNum);
-        // if (divIDused.className !== "used-play-space") {
-            divIDused.classList.remove("play-space");
-            divIDused.classList.add("blocked-play-space");
-        // }
+        divIDused.classList.remove("play-space");
+        divIDused.classList.add("blocked-play-space");
     }
 
-    // Change class of all spaces in row, so they are blocked from clicking.
+    // Change class of all spaces in row, so they are blocked from clicking this turn.
     for (i = 0; i < 5; i++) {
         let divIDused = document.getElementById("value" + rowNum + i);
         divIDused.classList.remove("play-space");
