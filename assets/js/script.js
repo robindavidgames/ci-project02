@@ -163,38 +163,59 @@ function blockDivs(divValue) {
         divIDused.classList.remove("play-space");
         divIDused.classList.add("blocked-play-space");
     }
+
+    calculateArray();
 }
 
 /**
  * Calculates the score of a row or column array.
  */
 function calculateArray() {
-    // Create an array with row 1 values.
-    // let array1 = [diceObject['value00'], diceObject['value01'], diceObject['value02'], diceObject['value03'], diceObject['value04']];
-    let array1 = ['a', 'b', 'c', 'd', 'e'];
-    let array2 = ['a', 'b', 'c', 'd', 'e'];
-    let array3 = ['a', 'b', 'c', 'd', 'e'];
-    let array4 = ['a', 'b', 'c', 'd', 'e'];
-    let array5 = ['a', 'b', 'c', 'd', 'e'];
-    let array6 = ['a', 'b', 'c', 'd', 'e'];
-    let array7 = ['a', 'b', 'c', 'd', 'e'];
-    let array8 = ['a', 'b', 'c', 'd', 'e'];
-    let array9 = ['a', 'b', 'c', 'd', 'e'];
-    let array10 = ['a', 'b', 'c', 'd', 'e'];
+    // Arrays for each row and column to be calculated.
+    let array1 = [];
+    let array2 = [];
+    let array3 = [];
+    let array4 = [];
+    let array5 = [];
+    let array6 = [];
+    let array7 = [];
+    let array8 = [];
+    let array9 = [];
+    let array10 = [];
 
-    // Add loops for rest of the arrays.
+    // Build arrays with values in the grid.
     for (i = 0; i < 5; i++) {
             array1.push(diceObject['value0'+i]);
     }
+
+    // Code to remove null entries from a given array. Modified from https://stackoverflow.com/questions/281264/remove-empty-elements-from-an-array-in-javascript
+    let len = array1.length;
+    for(j = 0; j < len; j++ ) {
+        array1[j] && array1.push(array1[j]);
+    }
+    array1.splice(0 , len);
     
-    // Sorting code adapted from https://www.w3schools.com/jsref/jsref_sort.asp
+    // Sort array contents in ascending order. Adapted from https://www.w3schools.com/jsref/jsref_sort.asp
     array1.sort(function(a, b){return a-b});
     console.log("Array 1 values are " + array1);
 
+    // Begin checking for different features.
+    // Create a var for each array and start it at 0. Go up through the possible combinations, updating the var with better scores if possible. Then output all the vars into presentArrayScore.
+
+    let array1Value = 0;
+
     // Check single pair.
-    let array1pair = array1[0] === array1[1] || array1[1] === array1[2] || array1[2] === array1[3] || array1[3] === array1[4];
+    let array1pair = (array1[0] === array1[1] && array1[0] !== undefined) || (array1[1] === array1[2] && array1[1] !== undefined) || (array1[2] === array1[3] && array1[2] !== undefined) || (array1[3] === array1[4] && array1[3] !== undefined);
     if (array1pair) {
-        console.log("Pair!");
+        console.log("Array 1, Pair!");
+        array1Value = 1;
+    }
+
+    // Check 2 pair.
+    let array1TwoPair = (array1[0] === array1[1] && array1[0] !== undefined && array1[2] === array1[3] && array1[2] !== undefined) || (array1[0] === array1[1] && array1[0] !== undefined && array1[3] === array1[4] && array1[3] !== undefined) || (array1[1] === array1[2] && array1[1] !== undefined && array1[3] === array1[4] && array1[3] !== undefined);
+    if (array1TwoPair) {
+        console.log("Array 1, Two Pair!");
+        array1Value = 2;
     }
 }
 
