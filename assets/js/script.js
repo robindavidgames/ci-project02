@@ -48,17 +48,13 @@ function newTurn() {
     document.getElementById("round-tracker").innerHTML = `Round ${roundNumber} of 13.`;
 
     // Reset temporarily blocked spaces
-    // let unblock = document.getElementsByClassName("blocked-play-space");
     let unblock = document.querySelectorAll(".blocked-play-space");
-    console.log(unblock); // debug
-    console.log(unblock.length); // debug
-    // for (let i = 0; i < unblock.length; i + 1) {
-    //     console.log(unblock[0]); // debug
-    //     if (unblock[i].className !== "used-play-space") {
-    //         unblock[i].classList.remove("blocked-play-space");
-    //         unblock[i].classList.add("play-space");
-    //     }
-    // }
+    for (block of unblock) {
+        if (block.className !== "used-play-space") {
+            block.classList.remove("blocked-play-space");
+            block.classList.add("play-space");
+        }
+    }
 
     // Randomise dice
     randomiseDice();
