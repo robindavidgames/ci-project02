@@ -194,17 +194,31 @@ function calculateArray() {
         array10.push(diceObject['value' + i + '4']);
     }
 
-    // let arrayTotal = [array1, array2, array3, array4, array5, array6, array7, array8, array9, array10];
+    // Remove undefined entries.
+    removeNull(array1);
+    removeNull(array2);
+    removeNull(array3);
+    removeNull(array4);
+    removeNull(array5);
+    removeNull(array6);
+    removeNull(array7);
+    removeNull(array8);
+    removeNull(array9);
+    removeNull(array10);
 
-    // Remove null entries from a given array. Adapted from https://stackoverflow.com/questions/281264/remove-empty-elements-from-an-array-in-javascript
-    let len = array1.length;
-    for (let j = 0; j < len; j++ ) {
-        array1[j] && array1.push(array1[j]);
-    }
-    array1.splice(0 , len);
-    
-    // Sort array contents in ascending order. Adapted from https://www.w3schools.com/jsref/jsref_sort.asp
-    array1.sort(function(a, b){return a-b});
+    // Check for different scoring features.
+    detectPoker(array1);
+    detectPoker(array2);
+    detectPoker(array3);
+    detectPoker(array4);
+    detectPoker(array5);
+    detectPoker(array6);
+    detectPoker(array7);
+    detectPoker(array8);
+    detectPoker(array9);
+    detectPoker(array10);
+
+    // now it adds a final number to each array, which is the score of that array.
 
     console.log(array1);
     console.log(array2);
@@ -216,10 +230,27 @@ function calculateArray() {
     console.log(array8);
     console.log(array9);
     console.log(array10);
+}
 
-    // Begin checking for different features.
-    // Create a var for each array and start it at 0. Go up through the possible combinations, updating the var with better scores if possible. Then output all the vars into presentArrayScore.
+/**
+ * Remove null entries from a given array. Adapted from https://stackoverflow.com/questions/281264/remove-empty-elements-from-an-array-in-javascript
+ */
+function removeNull(array) {
+    let len = array.length;
+    for (let j = 0; j < len; j++ ) {
+        array[j] && array.push(array[j]);
+    }
+    array.splice(0 , len);
 
+    // Sort array contents in ascending order. Adapted from https://www.w3schools.com/jsref/jsref_sort.asp
+    array.sort(function(a, b){return a-b});
+    return;
+}
+
+/**
+ * Create a var for each array and start it at 0. Go up through the possible combinations, updating the var with better scores if possible. Then return the final score as a final entry on each array.
+ */
+function detectPoker(array1) {
     let array1Value = 0;
 
     // Check if values are paired.
@@ -296,6 +327,8 @@ function calculateArray() {
         console.log("Array 1, Five Straight!");
         array1Value = 7;
     }
+
+    array1.push(array1Value);
 }
 
 /**
