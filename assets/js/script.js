@@ -9,12 +9,6 @@ let playerValue = "";
 // diceObject contains all the die values the player has placed.
 let diceObject = {};
 
-// contains data that blocks certain divs from being usable in a turn.
-// let clickedDiv = "";
-// let columnNum = 0;
-// let rowNum = 0;
-// let divIDused = "value00";
-
 /**
  * Create the play area.
  */
@@ -54,13 +48,17 @@ function newTurn() {
     document.getElementById("round-tracker").innerHTML = `Round ${roundNumber} of 13.`;
 
     // Reset temporarily blocked spaces
-    let unblock = document.getElementsByClassName("die blocked-play-space");
-    for (let i = 0; i < unblock.length; i + 1) {
-        if (unblock[i].className !== "used-play-space") {
-            unblock[i].classList.remove("blocked-play-space");
-            unblock[i].classList.add("play-space");
-        }
-    }
+    // let unblock = document.getElementsByClassName("blocked-play-space");
+    let unblock = document.querySelectorAll(".blocked-play-space");
+    console.log(unblock); // debug
+    console.log(unblock.length); // debug
+    // for (let i = 0; i < unblock.length; i + 1) {
+    //     console.log(unblock[0]); // debug
+    //     if (unblock[i].className !== "used-play-space") {
+    //         unblock[i].classList.remove("blocked-play-space");
+    //         unblock[i].classList.add("play-space");
+    //     }
+    // }
 
     // Randomise dice
     randomiseDice();
