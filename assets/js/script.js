@@ -188,7 +188,7 @@ function calculateArray() {
             array1.push(diceObject['value0'+i]);
     }
 
-    // Code to remove null entries from a given array. Modified from https://stackoverflow.com/questions/281264/remove-empty-elements-from-an-array-in-javascript
+    // Code to remove null entries from a given array. Adapted from https://stackoverflow.com/questions/281264/remove-empty-elements-from-an-array-in-javascript
     let len = array1.length;
     for(j = 0; j < len; j++ ) {
         array1[j] && array1.push(array1[j]);
@@ -216,6 +216,65 @@ function calculateArray() {
     if (array1TwoPair) {
         console.log("Array 1, Two Pair!");
         array1Value = 2;
+    }
+
+    // Check 3 of a kind.
+    let array1ThreeOfAKind = (array1[0] === array1[1] && array1[1] === array1[2] && array1[0] !== undefined) || (array1[1] === array1[2] && array1[2] === array1[3] && array1[1] !== undefined) || (array1[2] === array1[3] && array1[3] === array1[4] && array1[2] !== undefined);
+    if (array1ThreeOfAKind) {
+        console.log("Array 1, Three of a Kind!");
+        array1Value = 3;
+    }
+
+    // Check full house.
+    let array1FullHouse = (array1[0] === array1[1] && array1[1] === array1[2] && array1[0] !== undefined && array1[3] === array1[4] && array1[3] !== undefined) || (array1[2] === array1[3] && array1[3] === array1[4] && array1[2] !== undefined && array1[0] === array1[1] && array1[0] !== undefined);
+    if (array1FullHouse) {
+        console.log("Array 1, Full House!");
+        array1Value = 4;
+        // continue;
+    }
+
+    // Check 4 of a kind.
+    let array1FourOfAKind = (array1[0] === array1[1] && array1[1] === array1[2] && array1[2] === array1[3] && array1[0] !== undefined) || (array1[1] === array1[2] && array1[2] === array1[3] && array1[3] === array1[4] && array1[1] !== undefined);
+    if (array1FourOfAKind) {
+        console.log("Array 1, Four of a Kind!");
+        array1Value = 4;
+    }
+
+    // Check 5 of a kind.
+    let arra1FiveOfAKind = array1[0] === array1[1] && array1[1] === array1[2] && array1[2] === array1[3] && array1[3] === array1[4] && array1[0] !== undefined;
+    if (array1FourOfAKind) {
+        console.log("Array 1, Five of a Kind!");
+        array1Value = 6;
+        // continue;
+    }
+
+    // Check 3 straight.
+    let array1ThreeStraight = (array1[0] === array1[1] + 1 && array1[1] === array1[2] + 1 && array1[0] !== undefined) || (array1[1] === array1[2] + 1 && array1[2] === array1[3] + 1 && array1[1] !== undefined) || (array1[2] === array1[3] + 1 && array1[3] === array1[4] + 1 && array1[2] !== undefined);
+    if (array1FourOfAKind) {
+        console.log("Array 1, Three Straight!");
+        array1Value = 3;
+    }
+
+    // Check 3 straight with pair.
+    let array1ThreeStraightPair = (array1[0] === array1[1] + 1 && array1[1] === array1[2] + 1 && array1[0] !== undefined && array1[3] === array1[4] && array1[3] !== undefined) || (array1[2] === array1[3] + 1 && array1[3] === array1[4] + 1 && array1[2] !== undefined && array1[0] === array1[1] && array1[0] !== undefined);
+    if (array1FourOfAKind) {
+        console.log("Array 1, Three Straight with Pair!");
+        array1Value = 4;
+        // continue;
+    }
+
+    // Check 4 sraight.
+    let array1FourStraight = (array1[0] === array1[1] + 1 && array1[1] === array1[2] + 1 && array1[2] === array1[3] + 1 && array1[0] !== undefined) || (array1[1] === array1[2] + 1 && array1[2] === array1[3] + 1 && array1[3] === array1[4] + 1 && array1[1] !== undefined);
+    if (array1FourStraight) {
+        console.log("Array 1, Four Straight!");
+        array1Value = 5;
+    }
+
+    // Check 5 straight.
+    let array1FiveStraight = array1[0] === array1[1] + 1 && array1[1] === array1[2] + 1 && array1[2] === array1[3] + 1 && array1[3] === array1[4] + 1 && array1[0] !== undefined;
+    if (array1FiveStraight) {
+        console.log("Array 1, Five Straight!");
+        array1Value = 7;
     }
 }
 
