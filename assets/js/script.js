@@ -179,8 +179,22 @@ function calculateArray() {
 
     // Build arrays with values in the grid.
     for (let i = 0; i < 5; i++) {
-            array1.push(diceObject['value0'+i]);
+        array1.push(diceObject['value0' + i]);
+        array2.push(diceObject['value1' + i]);
+        array3.push(diceObject['value2' + i]);
+        array4.push(diceObject['value3' + i]);
+        array5.push(diceObject['value4' + i]);
     }
+
+    for (let i = 0; i < 5; i++) {
+        array6.push(diceObject['value' + i + '0']);
+        array7.push(diceObject['value' + i + '1']);
+        array8.push(diceObject['value' + i + '2']);
+        array9.push(diceObject['value' + i + '3']);
+        array10.push(diceObject['value' + i + '4']);
+    }
+
+    // let arrayTotal = [array1, array2, array3, array4, array5, array6, array7, array8, array9, array10];
 
     // Remove null entries from a given array. Adapted from https://stackoverflow.com/questions/281264/remove-empty-elements-from-an-array-in-javascript
     let len = array1.length;
@@ -191,7 +205,17 @@ function calculateArray() {
     
     // Sort array contents in ascending order. Adapted from https://www.w3schools.com/jsref/jsref_sort.asp
     array1.sort(function(a, b){return a-b});
-    console.log("Array 1 values are " + array1);
+
+    console.log(array1);
+    console.log(array2);
+    console.log(array3);
+    console.log(array4);
+    console.log(array5);
+    console.log(array6);
+    console.log(array7);
+    console.log(array8);
+    console.log(array9);
+    console.log(array10);
 
     // Begin checking for different features.
     // Create a var for each array and start it at 0. Go up through the possible combinations, updating the var with better scores if possible. Then output all the vars into presentArrayScore.
