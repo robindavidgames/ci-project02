@@ -51,11 +51,11 @@ function createPlayArea() {
 function newTurn() {
     // Update the round tracker
     roundNumber += 1;
-    document.getElementById("round-tracker").innerHTML = `Round ${roundNumber} of 13.`
+    document.getElementById("round-tracker").innerHTML = `Round ${roundNumber} of 13.`;
 
     // Reset temporarily blocked spaces
     let unblock = document.getElementsByClassName("die blocked-play-space");
-    for (i = 0; i < unblock.length; i + 1) {
+    for (let i = 0; i < unblock.length; i + 1) {
         if (unblock[i].className !== "used-play-space") {
             unblock[i].classList.remove("blocked-play-space");
             unblock[i].classList.add("play-space");
@@ -151,14 +151,14 @@ function blockDivs(divValue) {
     console.log("Column clicked is number " + columnNum);
 
     // Change class of all spaces in column, so they are blocked from clicking this turn.
-    for (i = 0; i < 5; i++) {
+    for (let i = 0; i < 5; i++) {
         let divIDused = document.getElementById("value" + i + columnNum);
         divIDused.classList.remove("play-space");
         divIDused.classList.add("blocked-play-space");
     }
 
     // Change class of all spaces in row, so they are blocked from clicking this turn.
-    for (i = 0; i < 5; i++) {
+    for (let i = 0; i < 5; i++) {
         let divIDused = document.getElementById("value" + rowNum + i);
         divIDused.classList.remove("play-space");
         divIDused.classList.add("blocked-play-space");
@@ -184,13 +184,13 @@ function calculateArray() {
     let array10 = [];
 
     // Build arrays with values in the grid.
-    for (i = 0; i < 5; i++) {
+    for (let i = 0; i < 5; i++) {
             array1.push(diceObject['value0'+i]);
     }
 
     // Code to remove null entries from a given array. Adapted from https://stackoverflow.com/questions/281264/remove-empty-elements-from-an-array-in-javascript
     let len = array1.length;
-    for(j = 0; j < len; j++ ) {
+    for (let j = 0; j < len; j++ ) {
         array1[j] && array1.push(array1[j]);
     }
     array1.splice(0 , len);
@@ -226,7 +226,7 @@ function calculateArray() {
     }
 
     // Check full house.
-    let array1FullHouse = (array1[0] === array1[1] && array1[1] === array1[2] && array1[0] !== undefined && array1[3] === array1[4] && array1[3] !== undefined) || (array1[2] === array1[3] && array1[3] === array1[4] && array1[2] !== undefined && array1[0] === array1[1] && array1[0] !== undefined);
+    let array1FullHouse = (array1[0] === array1[1] && array1[1] === array1[2] && array1[0] !== undefined && array1[3] === array1[4] && array1[3] !== undefined && array1[0] !== array1[4]) || (array1[2] === array1[3] && array1[3] === array1[4] && array1[2] !== undefined && array1[0] === array1[1] && array1[0] !== undefined && array1[0] !== array1[2]);
     if (array1FullHouse) {
         console.log("Array 1, Full House!");
         array1Value = 4;
@@ -249,33 +249,33 @@ function calculateArray() {
     }
 
     // Check 3 straight.
-    let array1ThreeStraight = (array1[0] === array1[1] + 1 && array1[1] === array1[2] + 1 && array1[0] !== undefined) || (array1[1] === array1[2] + 1 && array1[2] === array1[3] + 1 && array1[1] !== undefined) || (array1[2] === array1[3] + 1 && array1[3] === array1[4] + 1 && array1[2] !== undefined);
-    if (array1FourOfAKind) {
-        console.log("Array 1, Three Straight!");
-        array1Value = 3;
-    }
+    // let array1ThreeStraight = (array1[0] === array1[1] + 1 && array1[1] === array1[2] + 1 && array1[0] !== undefined) || (array1[1] === array1[2] + 1 && array1[2] === array1[3] + 1 && array1[1] !== undefined) || (array1[2] === array1[3] + 1 && array1[3] === array1[4] + 1 && array1[2] !== undefined);
+    // if (array1FourOfAKind) {
+    //     console.log("Array 1, Three Straight!");
+    //     array1Value = 3;
+    // }
 
     // Check 3 straight with pair.
-    let array1ThreeStraightPair = (array1[0] === array1[1] + 1 && array1[1] === array1[2] + 1 && array1[0] !== undefined && array1[3] === array1[4] && array1[3] !== undefined) || (array1[2] === array1[3] + 1 && array1[3] === array1[4] + 1 && array1[2] !== undefined && array1[0] === array1[1] && array1[0] !== undefined);
-    if (array1FourOfAKind) {
-        console.log("Array 1, Three Straight with Pair!");
-        array1Value = 4;
-        // continue;
-    }
+    // let array1ThreeStraightPair = (array1[0] === array1[1] + 1 && array1[1] === array1[2] + 1 && array1[0] !== undefined && array1[3] === array1[4] && array1[3] !== undefined) || (array1[2] === array1[3] + 1 && array1[3] === array1[4] + 1 && array1[2] !== undefined && array1[0] === array1[1] && array1[0] !== undefined);
+    // if (array1FourOfAKind) {
+    //     console.log("Array 1, Three Straight with Pair!");
+    //     array1Value = 4;
+    //     // continue;
+    // }
 
     // Check 4 sraight.
-    let array1FourStraight = (array1[0] === array1[1] + 1 && array1[1] === array1[2] + 1 && array1[2] === array1[3] + 1 && array1[0] !== undefined) || (array1[1] === array1[2] + 1 && array1[2] === array1[3] + 1 && array1[3] === array1[4] + 1 && array1[1] !== undefined);
-    if (array1FourStraight) {
-        console.log("Array 1, Four Straight!");
-        array1Value = 5;
-    }
+    // let array1FourStraight = (array1[0] === array1[1] + 1 && array1[1] === array1[2] + 1 && array1[2] === array1[3] + 1 && array1[0] !== undefined) || (array1[1] === array1[2] + 1 && array1[2] === array1[3] + 1 && array1[3] === array1[4] + 1 && array1[1] !== undefined);
+    // if (array1FourStraight) {
+    //     console.log("Array 1, Four Straight!");
+    //     array1Value = 5;
+    // }
 
     // Check 5 straight.
-    let array1FiveStraight = array1[0] === array1[1] + 1 && array1[1] === array1[2] + 1 && array1[2] === array1[3] + 1 && array1[3] === array1[4] + 1 && array1[0] !== undefined;
-    if (array1FiveStraight) {
-        console.log("Array 1, Five Straight!");
-        array1Value = 7;
-    }
+    // let array1FiveStraight = array1[0] === array1[1] + 1 && array1[1] === array1[2] + 1 && array1[2] === array1[3] + 1 && array1[3] === array1[4] + 1 && array1[0] !== undefined;
+    // if (array1FiveStraight) {
+    //     console.log("Array 1, Five Straight!");
+    //     array1Value = 7;
+    // }
 }
 
 /**
