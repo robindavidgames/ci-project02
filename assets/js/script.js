@@ -387,16 +387,15 @@ function presentArrayScore(array1, array2, array3, array4, array5, array6, array
  * Calculates total game score.
  */
 function calculateFinalScore() {
-    let sumDieSpaces = getElementsByClassName("sumDie");
-    let sumDieSpacesArray = [];
 
-    for (let i = 0; i < sumDieSpaces.length; i++) {
-        sumDieSpacesArray.push(parseInt(sumDie[i].innerText);
+    let sumDieSpaces = [];
+    for (let i = 0; i < 10; i++) {
+        temp = parseInt(document.getElementById('sum' + i).innerText);
+        sumDieSpaces.push(temp);
     }
 
-    let totalScore = sumDieSpacesArray.reduce(function(a, b) { return a + b; }, 0);
-    console.log(totalScore);
+    // Adapted from https://stackoverflow.com/questions/1230233/how-to-find-the-sum-of-an-array-of-numbers
+    let totalScore = sumDieSpaces.reduce(function(a, b) { return a + b; }, 0);
 
-
-    // playerValue = parseInt(document.getElementById('die2').innerText);
+    console.log("Total score is " + totalScore);
 }
