@@ -230,6 +230,8 @@ function calculateArray() {
     console.log(array8);
     console.log(array9);
     console.log(array10);
+
+    presentArrayScore(array1, array2, array3, array4, array5, array6, array7, array8, array9, array10);
 }
 
 /**
@@ -334,13 +336,67 @@ function detectPoker(array1) {
 /**
  * Presents the score on a row or column.
  */
-function presentArrayScore() {
- 
+function presentArrayScore(array1, array2, array3, array4, array5, array6, array7, array8, array9, array10) {
+    // scoreSpace = document.getElementsByClassName(sumDie);
+    // scoreSpace[0].textContent = array1[5];
+
+    let a1length = array1.length
+    let score1 = document.getElementById("sum0");
+    score1.textContent = array1[a1length - 1];
+
+    let a2length = array2.length
+    let score2 = document.getElementById("sum1");
+    score2.textContent = array2[a2length - 1];
+
+    let a3length = array3.length
+    let score3 = document.getElementById("sum2");
+    score3.textContent = array3[a3length - 1];
+
+    let a4length = array4.length
+    let score4 = document.getElementById("sum3");
+    score4.textContent = array4[a4length - 1];
+
+    let a5length = array5.length
+    let score5 = document.getElementById("sum4");
+    score5.textContent = array5[a5length - 1];
+
+    let a6length = array6.length
+    let score6 = document.getElementById("sum5");
+    score6.textContent = array6[a6length - 1];
+
+    let a7length = array7.length
+    let score7 = document.getElementById("sum6");
+    score7.textContent = array7[a7length - 1];
+
+    let a8length = array8.length
+    let score8 = document.getElementById("sum7");
+    score8.textContent = array8[a8length - 1];
+
+    let a9length = array9.length
+    let score9 = document.getElementById("sum8");
+    score9.textContent = array9[a9length - 1];
+
+    let a10length = array10.length
+    let score10 = document.getElementById("sum9");
+    score10.textContent = array10[a10length - 1];
+
+    calculateFinalScore();
 }
 
 /**
  * Calculates total game score.
  */
 function calculateFinalScore() {
+    let sumDieSpaces = getElementsByClassName("sumDie");
+    let sumDieSpacesArray = [];
 
+    for (let i = 0; i < sumDieSpaces.length; i++) {
+        sumDieSpacesArray.push(parseInt(sumDie[i].innerText);
+    }
+
+    let totalScore = sumDieSpacesArray.reduce(function(a, b) { return a + b; }, 0);
+    console.log(totalScore);
+
+
+    // playerValue = parseInt(document.getElementById('die2').innerText);
 }
