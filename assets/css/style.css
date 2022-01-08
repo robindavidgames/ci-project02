@@ -21,13 +21,21 @@ body {
 }
 
 /* Div containing round information, dice rolling button, and dice results. */
-#dice-roller {
+#info-container {
     background-color: aqua;
     border-radius: 15px;
     padding: 20px;
     width: 75%;
     margin: 0 auto;
     height: 200px;
+}
+
+#dice-roller {
+    float: left;
+}
+
+#score-container {
+    float: right;
 }
 
 #play-area {
@@ -64,6 +72,11 @@ body {
     background-color: burlywood;
     float: left;
     margin: 10px;
+    text-align: center;
+    font-size: larger;
+    font-weight: 700;
+    line-height: 50px;
+    color: blue;
 }
 
 /* Create a new line for each set of dice. */

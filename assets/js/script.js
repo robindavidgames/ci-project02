@@ -269,64 +269,64 @@ function detectPoker(array1) {
 
     // Check single pair.
     if (abPair || bcPair || cdPair || dePair) {
-        console.log("Array 1, Pair!");
+        console.log("Pair!");
         array1Value = 1;
     }
 
     // Check 2 pair.
     if ((abPair && cdPair) || (abPair && dePair) || (bcPair && dePair)) {
-        console.log("Array 1, Two Pair!");
+        console.log("Two Pair!");
         array1Value = 2;
     }
 
     // Check 3 of a kind.
     if ((abPair && bcPair) || (bcPair && cdPair) || (cdPair && dePair)) {
-        console.log("Array 1, Three of a Kind!");
+        console.log("Three of a Kind!");
         array1Value = 3;
     }
 
     // Check full house.
     if ((abPair && bcPair && dePair) || (cdPair && dePair && abPair)) {
-        console.log("Array 1, Full House!");
+        console.log("Full House!");
         array1Value = 4;
         // continue;
     }
 
     // Check 4 of a kind.
     if ((abPair && bcPair && cdPair) || (bcPair && cdPair && dePair)) {
-        console.log("Array 1, Four of a Kind!");
+        console.log("Four of a Kind!");
         array1Value = 4;
     }
 
     // Check 5 of a kind.
     if (abPair && bcPair && cdPair && dePair) {
-        console.log("Array 1, Five of a Kind!");
+        console.log("Five of a Kind!");
         array1Value = 6;
         // continue;
     }
 
     // Check 3 straight.
     if ((abSeq && bcSeq) || (bcSeq && cdSeq) || (cdSeq && deSeq)) {
-        console.log("Array 1, Three Straight!");
+        console.log("Three Straight!");
         array1Value = 3;
     }
 
     // Check 3 straight with pair.
     if ((abSeq && bcSeq && dePair) || (cdSeq && deSeq && abPair)) {
-        console.log("Array 1, Three Straight with Pair!");
+        console.log("Three Straight with Pair!");
         array1Value = 4;
         // continue;
     }
 
     // Check 4 sraight.
     if ((abSeq && bcSeq && cdSeq) || (bcSeq && cdSeq && deSeq)) {
-        console.log("Array 1, Four Straight!");
+        console.log("Four Straight!");
         array1Value = 5;
     }
 
     // Check 5 straight.
     if (abSeq && bcSeq && cdSeq && deSeq) {
-        console.log("Array 1, Five Straight!");
+        console.log("Five Straight!");
         array1Value = 7;
     }
 
@@ -337,8 +337,6 @@ function detectPoker(array1) {
  * Presents the score on a row or column.
  */
 function presentArrayScore(array1, array2, array3, array4, array5, array6, array7, array8, array9, array10) {
-    // scoreSpace = document.getElementsByClassName(sumDie);
-    // scoreSpace[0].textContent = array1[5];
 
     let a1length = array1.length
     let score1 = document.getElementById("sum0");
@@ -398,4 +396,9 @@ function calculateFinalScore() {
     let totalScore = sumDieSpaces.reduce(function(a, b) { return a + b; }, 0);
 
     console.log("Total score is " + totalScore);
+
+    // Update score text on page.
+    // let scoreTextUpdate = document.getElementById("total-score");
+    document.getElementById('total-score').textContent = `Your total score is ${totalScore}.`;
+
 }
