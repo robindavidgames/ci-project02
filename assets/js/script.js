@@ -92,19 +92,13 @@ function randomiseDice() {
  * Allows user to click on first die.
  */
 function selectDice1() {
-    // if (!this.classList.contains("usedDie")) {
     if (!document.getElementById('die1').classList.contains("usedDie")) {
         playerValue = parseInt(document.getElementById('die1').innerText);
-        // playerValue = parseInt(this.innerText);
         console.log("Die value chosen is " + playerValue);
         document.getElementById('die1').classList.add("clickedDie");
         if (document.getElementById('die2').classList.contains("clickedDie")) {
             document.getElementById('die2').classList.remove("clickedDie");
         }
-        // this.classList.add("clickedDie");
-        // divIDused.classList.remove("play-space");
-        // divIDused.classList.add("blocked-play-space");
-        // if (this.classList.contains("play-space") && !this.classList.contains("used-play-space"))
     }
 }
 
@@ -120,10 +114,6 @@ function selectDice1() {
             document.getElementById('die1').classList.remove("clickedDie");
         }
     }
-
-    // playerValue = parseInt(document.getElementById('die2').innerText);
-    // console.log("Die value chosen is " + playerValue);
-    // document.getElementById('die2').classList.add("clickedDie");
 }
 
 // Event listener for clicking the first die.
@@ -156,8 +146,6 @@ function assignDice() {
         let clickedDiv = this.id;
         blockDivs(clickedDiv);
     }
-    
-    // calculateArray();
 }
 
 // Event listener for assigning values in play spaces.
@@ -171,13 +159,9 @@ for (let i = 0; i < clickPlaySpace.length; i++) {
  */
 function blockDivs(divValue) {
 
-    // Determines which row was clicked.
+    // Determines which row and column were clicked.
     let rowNum = divValue.charAt(5);
-    console.log("Row clicked is number " + rowNum);
-
-    // Determines which column was clicked.
     let columnNum = divValue.charAt(6);
-    console.log("Column clicked is number " + columnNum);
 
     // Change class of all spaces in column, so they are blocked from clicking this turn.
     for (let i = 0; i < 5; i++) {
@@ -193,7 +177,6 @@ function blockDivs(divValue) {
         divIDused.classList.add("blocked-play-space");
     }
 
-    // calculateArray();
     disableDie();
 }
 
@@ -201,10 +184,10 @@ function blockDivs(divValue) {
  * Blocks the selected die from being reused a second time this round.
  */
 function disableDie() {
-    // Blocks the die from being used again.
     let clickedDie = document.getElementsByClassName('clickedDie');
     clickedDie[0].classList.add('usedDie');
     clickedDie[0].classList.remove('clickedDie');
+
     playerValue = "";
     
     calculateArray();
@@ -267,24 +250,12 @@ function calculateArray() {
     detectPoker(array9);
     detectPoker(array10);
 
-    // now it adds a final number to each array, which is the score of that array.
-
-    console.log(array1);
-    console.log(array2);
-    console.log(array3);
-    console.log(array4);
-    console.log(array5);
-    console.log(array6);
-    console.log(array7);
-    console.log(array8);
-    console.log(array9);
-    console.log(array10);
-
     presentArrayScore(array1, array2, array3, array4, array5, array6, array7, array8, array9, array10);
 }
 
 /**
- * Remove null entries from a given array. Adapted from https://stackoverflow.com/questions/281264/remove-empty-elements-from-an-array-in-javascript
+ * Remove null entries from a given array. 
+ * Adapted from https://stackoverflow.com/questions/281264/remove-empty-elements-from-an-array-in-javascript
  */
 function removeNull(array) {
     let len = array.length;
@@ -299,18 +270,19 @@ function removeNull(array) {
 }
 
 /**
- * Create a var for each array and start it at 0. Go up through the possible combinations, updating the var with better scores if possible. Then return the final score as a final entry on each array.
+ * Go up through the possible combinations, updating a temporary var with better scores if possible. 
+ * Then return the final score as a final entry on each array.
  */
 function detectPoker(array1) {
     let array1Value = 0;
 
-    // Check if values are paired.
+    // Check if values in array are paired.
     let abPair = array1[0] === array1[1] && array1[0] !== undefined;
     let bcPair = array1[1] === array1[2] && array1[1] !== undefined;
     let cdPair = array1[2] === array1[3] && array1[2] !== undefined;
     let dePair = array1[3] === array1[4] && array1[3] !== undefined;
 
-    // Check if values are sequential.
+    // Check if values in array are sequential.
     let abSeq = array1[0] +1 === array1[1];
     let bcSeq = array1[1] +1 === array1[2];
     let cdSeq = array1[2] +1 === array1[3];
@@ -318,64 +290,51 @@ function detectPoker(array1) {
 
     // Check single pair.
     if (abPair || bcPair || cdPair || dePair) {
-        console.log("Pair!");
         array1Value = 1;
     }
 
     // Check 2 pair.
     if ((abPair && cdPair) || (abPair && dePair) || (bcPair && dePair)) {
-        console.log("Two Pair!");
         array1Value = 2;
     }
 
     // Check 3 of a kind.
     if ((abPair && bcPair) || (bcPair && cdPair) || (cdPair && dePair)) {
-        console.log("Three of a Kind!");
         array1Value = 3;
     }
 
     // Check full house.
     if ((abPair && bcPair && dePair) || (cdPair && dePair && abPair)) {
-        console.log("Full House!");
         array1Value = 4;
-        // continue;
     }
 
     // Check 4 of a kind.
     if ((abPair && bcPair && cdPair) || (bcPair && cdPair && dePair)) {
-        console.log("Four of a Kind!");
         array1Value = 4;
     }
 
     // Check 5 of a kind.
     if (abPair && bcPair && cdPair && dePair) {
-        console.log("Five of a Kind!");
         array1Value = 6;
-        // continue;
     }
 
     // Check 3 straight.
     if ((abSeq && bcSeq) || (bcSeq && cdSeq) || (cdSeq && deSeq)) {
-        console.log("Three Straight!");
         array1Value = 3;
     }
 
     // Check 3 straight with pair.
     if ((abSeq && bcSeq && dePair) || (cdSeq && deSeq && abPair)) {
-        console.log("Three Straight with Pair!");
         array1Value = 4;
-        // continue;
     }
 
     // Check 4 sraight.
     if ((abSeq && bcSeq && cdSeq) || (bcSeq && cdSeq && deSeq)) {
-        console.log("Four Straight!");
         array1Value = 5;
     }
 
     // Check 5 straight.
     if (abSeq && bcSeq && cdSeq && deSeq) {
-        console.log("Five Straight!");
         array1Value = 7;
     }
 
@@ -447,7 +406,5 @@ function calculateFinalScore() {
     console.log("Total score is " + totalScore);
 
     // Update score text on page.
-    // let scoreTextUpdate = document.getElementById("total-score");
     document.getElementById('total-score').textContent = `Your total score is ${totalScore}.`;
-
 }
