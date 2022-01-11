@@ -136,7 +136,6 @@ function assignDice() {
         // places the playerValue text in the div.
         this.innerText = playerValue;
         diceObject[this.id] = playerValue;
-        console.log(diceObject);
 
         // changes class associated with div so the div cannot be reused.
         this.classList.remove("play-space");
