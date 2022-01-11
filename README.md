@@ -23,6 +23,7 @@ into cleaner, easier to read and less resource intensive code, that looks like t
 
 if ((abSeq && bcSeq && dePair) || (cdSeq && deSeq && abPair)) { ...
 
+* Users were able to use the same dice repeatedly, placing more than 2 numbers each turn.
 
 ### Outstanding Bugs and Issues
 

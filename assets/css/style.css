@@ -86,6 +86,14 @@ body {
     color: blue;
 }
 
+.clickedDie {
+    background-color: greenyellow;
+}
+
+.usedDie {
+    background-color: red;
+}
+
 /* Create a new line for each set of dice. */
 #value10, #value20, #value30, #value40, #sum5 {
     clear: both;

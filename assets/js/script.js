@@ -52,7 +52,7 @@ function newTurn() {
         document.getElementById('new-turn').remove();
     }
 
-    // Reset temporarily blocked spaces
+    // Reset temporarily blocked spaces.
     let unblock = document.querySelectorAll(".blocked-play-space");
     for (block of unblock) {
         if (block.className !== "used-play-space") {
@@ -60,6 +60,12 @@ function newTurn() {
             block.classList.add("play-space");
         }
     }
+
+    // // Reset blocked dice.
+    // let refreshDice1 = document.getElementsByClassName('usedDie');
+    // for (dice in refreshDice1) {
+    //     dice.classList.remove('usedDie');
+    // }
 
     // Randomise dice
     randomiseDice();
@@ -84,16 +90,38 @@ function randomiseDice() {
  * Allows user to click on first die.
  */
 function selectDice1() {
-    playerValue = parseInt(document.getElementById('die1').innerText);
-    console.log("Die value chosen is " + playerValue);
+    // if (!this.classList.contains("usedDie")) {
+    if (!document.getElementById('die1').classList.contains("usedDie")) {
+        playerValue = parseInt(document.getElementById('die1').innerText);
+        // playerValue = parseInt(this.innerText);
+        console.log("Die value chosen is " + playerValue);
+        document.getElementById('die1').classList.add("clickedDie");
+        if (document.getElementById('die2').classList.contains("clickedDie")) {
+            document.getElementById('die2').classList.remove("clickedDie");
+        }
+        // this.classList.add("clickedDie");
+        // divIDused.classList.remove("play-space");
+        // divIDused.classList.add("blocked-play-space");
+        // if (this.classList.contains("play-space") && !this.classList.contains("used-play-space"))
+    }
 }
 
 /**
  * Allows user to click on second die.
  */
  function selectDice2() {
-    playerValue = parseInt(document.getElementById('die2').innerText);
-    console.log("Die value chosen is " + playerValue);
+    if (!document.getElementById('die2').classList.contains("usedDie")) {
+        playerValue = parseInt(document.getElementById('die2').innerText);
+        console.log("Die value chosen is " + playerValue);
+        document.getElementById('die2').classList.add("clickedDie");
+        if (document.getElementById('die1').classList.contains("clickedDie")) {
+            document.getElementById('die1').classList.remove("clickedDie");
+        }
+    }
+
+    // playerValue = parseInt(document.getElementById('die2').innerText);
+    // console.log("Die value chosen is " + playerValue);
+    // document.getElementById('die2').classList.add("clickedDie");
 }
 
 // Event listener for clicking the first die.
@@ -163,6 +191,20 @@ function blockDivs(divValue) {
         divIDused.classList.add("blocked-play-space");
     }
 
+    // calculateArray();
+    disableDie();
+}
+
+/**
+ * Blocks the selected die from being reused a second time this round.
+ */
+function disableDie() {
+    // Blocks the die from being used again.
+    let clickedDie = document.getElementsByClassName('clickedDie');
+    clickedDie[0].classList.add('usedDie');
+    clickedDie[0].classList.remove('clickedDie');
+    playerValue = "";
+    
     calculateArray();
 }
 
