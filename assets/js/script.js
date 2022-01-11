@@ -61,11 +61,13 @@ function newTurn() {
         }
     }
 
-    // // Reset blocked dice.
-    // let refreshDice1 = document.getElementsByClassName('usedDie');
-    // for (dice in refreshDice1) {
-    //     dice.classList.remove('usedDie');
-    // }
+    // Reset blocked dice and playerValue.
+    let roller = document.getElementsByClassName('roller');
+    for (roll of roller) {
+        roll.classList.remove('usedDie');
+        roll.classList.remove('clickedDie');
+    }
+    playerValue = "";
 
     // Randomise dice
     randomiseDice();
