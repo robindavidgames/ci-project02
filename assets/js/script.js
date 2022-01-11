@@ -141,7 +141,7 @@ function assignDice() {
     console.log("User clicked div with ID " + this.id);
 
     // If loop checks if the div has not been blocked or already been used.
-    if (this.classList.contains("play-space") && !this.classList.contains("used-play-space")) {
+    if (this.classList.contains("play-space") && !this.classList.contains("used-play-space") && playerValue != "") {
 
         // places the playerValue text in the div.
         this.innerText = playerValue;
