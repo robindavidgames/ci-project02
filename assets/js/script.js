@@ -47,6 +47,11 @@ function newTurn() {
     roundNumber += 1;
     document.getElementById("round-tracker").innerHTML = `Round ${roundNumber} of 13.`;
 
+    // Check if Game Over and remove New Turn button.
+    if (roundNumber === 13) {
+        document.getElementById('new-turn').remove();
+    }
+
     // Reset temporarily blocked spaces
     let unblock = document.querySelectorAll(".blocked-play-space");
     for (block of unblock) {
