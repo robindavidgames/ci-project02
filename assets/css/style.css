@@ -14,6 +14,16 @@ body {
     font-family: 'Be Vietnam Pro', sans-serif;
 }
 
+p, li {
+    margin-bottom: 10px;
+    /* letter-spacing: 1px; */
+    word-spacing: 1px;
+}
+
+li {
+    margin-left: 25px;
+}
+
 /* Series of rules covering the title and tagline. */
 #header {
     text-align: center;
@@ -27,7 +37,7 @@ body {
 
 /* Div containing round information, dice rolling button, and dice results. */
 #info-container {
-    background-color: aqua;
+    background-color: #FFCBCB;
     border-radius: 15px;
     padding: 20px;
     /* width: 75%; */
@@ -39,10 +49,24 @@ body {
     margin-top: 20px;
 }
 
+/* Contains button and dice results. */
 #dice-roller {
     float: left;
 }
 
+#new-turn {
+    clear: both;
+    height: 50px;
+    margin: 10px;
+    text-align: center;
+    font-size: larger;
+    font-weight: 400;
+    line-height: 50px;
+    border-radius: 5px;
+    padding: 0px 10px;
+}
+
+/* Contains score information. */
 #score-container {
     float: right;
     color: blue;
@@ -50,8 +74,9 @@ body {
     font-weight: 700;
 }
 
+/* Play area aligned to the left. */
 #play-area {
-    background-color: wheat;
+    background-color: #D9D7F1;
     border-radius: 15px;
     padding: 20px;
     /* width: 75%; */
@@ -63,10 +88,11 @@ body {
     float: left;
 }
 
+/* Scoring cheat-sheet aligned to the right. */
 #score-information {
     float: right;
     width: 230px;
-    background-color: rgb(219, 62, 62);
+    background-color: #E7FBBE;
     border-radius: 15px;
     padding: 20px;
     /* margin: 0 auto; */
@@ -75,22 +101,14 @@ body {
     margin-bottom: 20px;
 }
 
+/* Text in the play area. */
 #assign-dice {
     line-height: 30px;
 }
 
+/* Rules, bottom of the page. */
 #how-to-play {
     clear: both;
-}
-
-p, li {
-    margin-bottom: 10px;
-    /* letter-spacing: 1px; */
-    word-spacing: 1px;
-}
-
-li {
-    margin-left: 25px;
 }
 
 /* #dice-area {
