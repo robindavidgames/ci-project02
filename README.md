@@ -4,7 +4,16 @@
 Full House Dice is a JavaScript implementation of an original game that I have designed. It is a casual game for a general audience.
 
 ## Features
-* Javascript code to dynamically create the page elements. This could have been achieved by simply creating 35 divs, but I wanted to see if I could use the JS code to create simpler HTML. Conceivably, I could expand or contract the number of divs in the play area with no change to the HTML.
+* Javascript code to dynamically create the play-area elements. This could have been achieved by creating 35 divs, but I wanted to see if I could use the JavaScript code to create simpler HTML. Conceivably, I could expand or contract the number of divs in the play area with no change to the HTML.
+* A dice-rolling section, which keeps track of round number, total score, and available dice. Players can press the "Roll Dice" button to generate 2 new dice values, randomly numbered between 1 and 6. 
+* The round number will also update at this point. 
+* The score area updates dynamically as players put their dice values into the play area. The "Roll Dice" button disappears at the end of the game, ensuring the player cannot play more than 13 rounds.
+* A play-area, in which players will allocate their dice values. This forms the bulk of the JavaScript code. Players take the dice from the dice-rolling section and put them into this grid by clicking on the dice and then clicking on an available square.
+* The grid updates dynamically, blocking out specific spaces, accoring to the game rules, after each action. These spaces are then reset every turn. 
+* Additionally, the values from each row and column in the grid are placed into arrays that are scored according to the rules of poker. 
+* The scores for each row and column are updated dynamically and placed into a box at the end of each row and column. The total score for all of these rows and columns are updated at the top of the page.
+* A scoring cheat-sheet is to the right of the play area, so that users can always see their objectives.
+* Full rules to the game are below the play area.
 
 ## Testing
 
