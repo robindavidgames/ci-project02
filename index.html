@@ -19,29 +19,35 @@
             <p>A game by Robin David</p>
         </div>
 
-        <!-- Cointaining button to begin a new turn, two dice to roll, and total score. -->
-        <div id="info-container">
-            <div id="dice-roller">
-                <!-- Inner text of round-tracker to update each round. -->
-                <p id="round-tracker">Roll the dice to begin.</p>
-                <input class="button" type="submit" value="Roll Dice" id="new-turn">
-                <!-- Divs to show the two dice available each round. -->
-                <div class="die roller" id="die1"></div>
-                <div class="die roller" id="die2"></div>
-            </div>
-            <div id="score-container">
-                <!-- Contains information about total player score. -->
-                <p id="total-score">Your total score is 0.</p>
-            </div>
-        </div>
+        <!-- <div id=game> -->
 
-        <!-- Containing the main play area, where dice values are assigned. -->
-        <div id="play-area">
-            <p>Assign dice here.</p>
-        </div>
+            <!-- Cointaining button to begin a new turn, two dice to roll, and total score. -->
+            <div id="info-container">
+                <div id="dice-roller">
+                    <!-- Inner text of round-tracker to update each round. -->
+                    <p id="round-tracker">Roll the dice to begin.</p>
+                    <input class="button" type="submit" value="Roll Dice" id="new-turn">
+                    <!-- Divs to show the two dice available each round. -->
+                    <div class="die roller" id="die1"></div>
+                    <div class="die roller" id="die2"></div>
+                </div>
+                <div id="score-container">
+                    <!-- Contains information about total player score. -->
+                    <p id="total-score">Your total score is 0.</p>
+                </div>
+            </div>
+
+            <!-- Containing the main play area, where dice values are assigned. -->
+            <div id="play-area">
+                <p id="assign-dice">Assign dice here.</p>
+                <div id="dice-area"></div>
+            </div>
+
+        <!-- </div> -->
 
         <!-- Non-interactive div, providing scoring cheat-sheet. -->
         <div id="score-information">
+            <p>Row and column combinations.</p>
             <ul>
                 <li>5 straight = 7pt</li>
                 <li>4 straight = 5pt</li>

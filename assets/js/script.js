@@ -13,7 +13,7 @@ let diceObject = {};
  * Create the play area.
  */
 function createPlayArea() {
-    let dieWrapper = document.getElementById("play-area");
+    let dieWrapper = document.getElementById("dice-area");
 
     // Create 5 sets of dice containers.
     for (let h = 0; h < 5; h++) {
