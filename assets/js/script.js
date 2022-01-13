@@ -258,10 +258,19 @@ function calculateArray() {
  * Remove null entries from a given array. 
  * Adapted from https://stackoverflow.com/questions/281264/remove-empty-elements-from-an-array-in-javascript
  */
+// function removeNull(array) {
+//     let len = array.length;
+//     for (let j = 0; j < len; j++ ) {
+//         array[j] && array.push(array[j]);
+//     }
+//     array.splice(0 , len);
+
 function removeNull(array) {
     let len = array.length;
     for (let j = 0; j < len; j++ ) {
-        array[j] && array.push(array[j]);
+        if (array[j]) {
+            array.push(array[j]);
+        }
     }
     array.splice(0 , len);
 
@@ -269,6 +278,25 @@ function removeNull(array) {
     array.sort(function(a, b){return a-b});
     return;
 }
+
+// function removeNull(array) {
+//     let tempArray = [];
+//     let len = array.length;
+//     for (let j = 0; j < len; j++) {
+//       let val = array[j];
+//       if (val) {
+//         tempArray.push(val);
+//       }
+//       // array[j] && array.push(array[j]);
+//     }
+//     array = tempArray;
+//     //   array.splice(0, len);
+  
+//     // Sort array contents in ascending order. Adapted from https://www.w3schools.com/jsref/jsref_sort.asp
+//     array.sort(function (a, b) {
+//       return a - b;
+//     });
+//   }
 
 /**
  * Go up through the possible combinations, updating a temporary var with better scores if possible. 
