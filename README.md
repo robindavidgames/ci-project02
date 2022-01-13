@@ -10,7 +10,8 @@ Full House Dice is a JavaScript implementation of an original game that I have d
 * The score area updates dynamically as players put their dice values into the play area. The "Roll Dice" button disappears at the end of the game, ensuring the player cannot play more than 13 rounds.
 * A play-area, in which players will allocate their dice values. This forms the bulk of the JavaScript code. Players take the dice from the dice-rolling section and put them into this grid by clicking on the dice and then clicking on an available square.
 * The grid updates dynamically, blocking out specific spaces, accoring to the game rules, after each action. These spaces are then reset every turn. 
-* Additionally, the values from each row and column in the grid are placed into arrays that are scored according to the rules of poker. 
+* The two rolled dice update when they are used, so that they may not be used more than once each. Their colours change to clearly indicate to the user what their status is - yellow to indicate they are currently being used, red to indicate that have been used in that turn.
+* The values from each row and column in the grid are placed into arrays that are scored according to the rules of poker. 
 * The scores for each row and column are updated dynamically and placed into a box at the end of each row and column. The total score for all of these rows and columns are updated at the top of the page.
 * A scoring cheat-sheet is to the right of the play area, so that users can always see their objectives.
 * Full rules to the game are below the play area.
