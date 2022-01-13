@@ -24,7 +24,7 @@ li {
     margin-left: 25px;
 }
 
-/* Series of rules covering the title and tagline. */
+/* Series of rules covering the title and hyperlinks. */
 #header {
     text-align: center;
     margin-top: 20px;
@@ -33,6 +33,7 @@ li {
 #header h1 {
     font-size: 220%;
     font-family: 'Rubik', sans-serif;
+    margin-bottom: 10px;
 }
 
 /* Div containing round information, dice rolling button, and dice results. */

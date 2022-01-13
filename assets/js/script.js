@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 createPlayArea();
 
 // roundNumber controls the length of the game.
@@ -54,7 +56,7 @@ function newTurn() {
 
     // Reset temporarily blocked spaces.
     let unblock = document.querySelectorAll(".blocked-play-space");
-    for (block of unblock) {
+    for (let block of unblock) {
         if (block.className !== "used-play-space") {
             block.classList.remove("blocked-play-space");
             block.classList.add("play-space");
@@ -63,7 +65,7 @@ function newTurn() {
 
     // Reset blocked dice and playerValue.
     let roller = document.getElementsByClassName('roller');
-    for (roll of roller) {
+    for (let roll of roller) {
         roll.classList.remove('usedDie');
         roll.classList.remove('clickedDie');
     }
