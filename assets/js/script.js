@@ -211,21 +211,38 @@ function calculateArray() {
     let array9 = [];
     let array10 = [];
 
+    let bigArray = [array1, array2, array3, array4, array5, array6, array7, array8, array9, array10]
+
     // Build arrays with values in the grid.
-    for (let i = 0; i < 5; i++) {
-        array1.push(diceObject['value0' + i]);
-        array2.push(diceObject['value1' + i]);
-        array3.push(diceObject['value2' + i]);
-        array4.push(diceObject['value3' + i]);
-        array5.push(diceObject['value4' + i]);
+    // for (let i = 0; i < 5; i++) {
+    //     array1.push(diceObject['value0' + i]);
+    //     array2.push(diceObject['value1' + i]);
+    //     array3.push(diceObject['value2' + i]);
+    //     array4.push(diceObject['value3' + i]);
+    //     array5.push(diceObject['value4' + i]);
+    // }
+
+    // Build rows.
+    for (let j = 0; j < 5; j++) {
+        for (let i = 0; i < 5; i++) {
+            bigArray[j].push(diceObject['value' +j + i]);
+            console.log(bigArray);
+        }
     }
 
-    for (let i = 0; i < 5; i++) {
-        array6.push(diceObject['value' + i + '0']);
-        array7.push(diceObject['value' + i + '1']);
-        array8.push(diceObject['value' + i + '2']);
-        array9.push(diceObject['value' + i + '3']);
-        array10.push(diceObject['value' + i + '4']);
+    // for (let i = 0; i < 5; i++) {
+    //     array6.push(diceObject['value' + i + '0']);
+    //     array7.push(diceObject['value' + i + '1']);
+    //     array8.push(diceObject['value' + i + '2']);
+    //     array9.push(diceObject['value' + i + '3']);
+    //     array10.push(diceObject['value' + i + '4']);
+    // }
+
+    // Build columns.
+    for (let j = 0; j < 5; j++) {
+        for (let i = 0; i < 5; i++) {
+            bigArray[j + 5].push(diceObject['value' + i + j]);
+        }
     }
 
     // Remove undefined entries.
