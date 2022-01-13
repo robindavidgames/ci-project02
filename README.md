@@ -25,21 +25,37 @@ Full House Dice is a JavaScript implementation of an original game that I have d
 * A function that reset the board each round would use getElementsByClassName() and then iterate on that nodelist to change classnames. Because getElementsByClassName() creates a live nodelist, changing the classnames was altering the nodelist and causing errors and omissions. I asked Slack for help and was pointed to this document: https://developer.mozilla.org/en-US/docs/Web/API/NodeList . I switched from using getElementsByClassName() to using querySelectorAll(), which creates a static nodelist and can be iterated upon without changing the contents.
 * Code to check for poker combinations was extremely long and repetitive. I implemented a series of variables that would check contents of a given array for repeated numbers and numbers in sequence. I was able to turn code that looked like this:
 
-    let array1ThreeStraightPair = (array1[0] === array1[1] + 1 && array1[1] === array1[2] + 1 && array1[0] !== undefined && array1[3] === array1[4] && array1[3] !== undefined) || (array1[2] === array1[3] + 1 && array1[3] === array1[4] + 1 && array1[2] !== undefined && array1[0] === array1[1] && array1[0] !== undefined);
+        let array1ThreeStraightPair = (array1[0] === array1[1] + 1 && array1[1] === array1[2] + 1 && array1[0] !== undefined && array1[3] === array1[4] && array1[3] !== undefined) || (array1[2] === array1[3] + 1 && array1[3] === array1[4] + 1 && array1[2] !== undefined && array1[0] === array1[1] && array1[0] !== undefined);
 
-    if (array1ThreeStraightPair) { ...
+        if (array1ThreeStraightPair) { ...
 
-    into cleaner, easier to read and less resource intensive code, that looks like this:
+    into cleaner, easier to read and less resource intensive code. It uses variables to check parts of combinations only one time and looks like this:
 
-    if ((abSeq && bcSeq && dePair) || (cdSeq && deSeq && abPair)) { ...
+        if ((abSeq && bcSeq && dePair) || (cdSeq && deSeq && abPair)) { ...
 
 * Users were able to use the same dice repeatedly, placing more than 2 numbers each turn. To fix this, I created a system of adding class names (clickedDie and usedDie) to dice that had been used and placing "if" statements around the code for using those dice. These statements checked which classes were assigned to the dice and if they could be used again. This also allowed me to create CSS rules for those classes, updating the colours of dice as they were clicked and used, improving the user experience.
+* A line in the removeNull function was prompting an error in JSHint.
+    
+        array[j] && array.push(array[j]);
+    
+    I updated the line to use more conventional syntax.
+
+        if (array[j]) {
+
+            array.push(array[j]);
+
+        }
 
 ### Outstanding Bugs and Issues
 
 ## Validator Testing
 
 ## Deployment
+
+## Technologies Used
+* Javascript, CSS and HTML.
+* GitHub
+* GitPod
 
 ## Credits
 

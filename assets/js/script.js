@@ -157,6 +157,7 @@ for (let i = 0; i < clickPlaySpace.length; i++) {
 
 /**
  * Blocks placement of divs in same column or row as first dice.
+ * @param divValue: the clicked div, from which other div values are calculated.
  */
 function blockDivs(divValue) {
 
@@ -348,6 +349,7 @@ function detectPoker(array) {
 
 /**
  * Presents the score on a row or column.
+ * @param array1: the array from which to output the score.
  */
 function presentArrayScore(array1, array2, array3, array4, array5, array6, array7, array8, array9, array10) {
 
