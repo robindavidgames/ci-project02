@@ -257,14 +257,8 @@ function calculateArray() {
 /**
  * Remove null entries from a given array. 
  * Adapted from https://stackoverflow.com/questions/281264/remove-empty-elements-from-an-array-in-javascript
+ * @param array: the array to remove null results from.
  */
-// function removeNull(array) {
-//     let len = array.length;
-//     for (let j = 0; j < len; j++ ) {
-//         array[j] && array.push(array[j]);
-//     }
-//     array.splice(0 , len);
-
 function removeNull(array) {
     let len = array.length;
     for (let j = 0; j < len; j++ ) {
@@ -279,95 +273,77 @@ function removeNull(array) {
     return;
 }
 
-// function removeNull(array) {
-//     let tempArray = [];
-//     let len = array.length;
-//     for (let j = 0; j < len; j++) {
-//       let val = array[j];
-//       if (val) {
-//         tempArray.push(val);
-//       }
-//       // array[j] && array.push(array[j]);
-//     }
-//     array = tempArray;
-//     //   array.splice(0, len);
-  
-//     // Sort array contents in ascending order. Adapted from https://www.w3schools.com/jsref/jsref_sort.asp
-//     array.sort(function (a, b) {
-//       return a - b;
-//     });
-//   }
-
 /**
  * Go up through the possible combinations, updating a temporary var with better scores if possible. 
  * Then return the final score as a final entry on each array.
+ * @param array: the array in which to find poker combinations.
  */
-function detectPoker(array1) {
-    let array1Value = 0;
+function detectPoker(array) {
+    let arrayValue = 0;
 
     // Check if values in array are paired.
-    let abPair = array1[0] === array1[1] && array1[0] !== undefined;
-    let bcPair = array1[1] === array1[2] && array1[1] !== undefined;
-    let cdPair = array1[2] === array1[3] && array1[2] !== undefined;
-    let dePair = array1[3] === array1[4] && array1[3] !== undefined;
+    let abPair = array[0] === array[1] && array[0] !== undefined;
+    let bcPair = array[1] === array[2] && array[1] !== undefined;
+    let cdPair = array[2] === array[3] && array[2] !== undefined;
+    let dePair = array[3] === array[4] && array[3] !== undefined;
 
     // Check if values in array are sequential.
-    let abSeq = array1[0] +1 === array1[1];
-    let bcSeq = array1[1] +1 === array1[2];
-    let cdSeq = array1[2] +1 === array1[3];
-    let deSeq = array1[3] +1 === array1[4];
+    let abSeq = array[0] +1 === array[1];
+    let bcSeq = array[1] +1 === array[2];
+    let cdSeq = array[2] +1 === array[3];
+    let deSeq = array[3] +1 === array[4];
 
     // Check single pair.
     if (abPair || bcPair || cdPair || dePair) {
-        array1Value = 1;
+        arrayValue = 1;
     }
 
     // Check 2 pair.
     if ((abPair && cdPair) || (abPair && dePair) || (bcPair && dePair)) {
-        array1Value = 2;
+        arrayValue = 2;
     }
 
     // Check 3 of a kind.
     if ((abPair && bcPair) || (bcPair && cdPair) || (cdPair && dePair)) {
-        array1Value = 3;
-    }
-
-    // Check full house.
-    if ((abPair && bcPair && dePair) || (cdPair && dePair && abPair)) {
-        array1Value = 4;
-    }
-
-    // Check 4 of a kind.
-    if ((abPair && bcPair && cdPair) || (bcPair && cdPair && dePair)) {
-        array1Value = 4;
-    }
-
-    // Check 5 of a kind.
-    if (abPair && bcPair && cdPair && dePair) {
-        array1Value = 6;
+        arrayValue = 3;
     }
 
     // Check 3 straight.
     if ((abSeq && bcSeq) || (bcSeq && cdSeq) || (cdSeq && deSeq)) {
-        array1Value = 3;
+        arrayValue = 3;
+    }
+
+    // Check full house.
+    if ((abPair && bcPair && dePair) || (cdPair && dePair && abPair)) {
+        arrayValue = 4;
     }
 
     // Check 3 straight with pair.
     if ((abSeq && bcSeq && dePair) || (cdSeq && deSeq && abPair)) {
-        array1Value = 4;
+        arrayValue = 4;
+    }
+
+    // Check 4 of a kind.
+    if ((abPair && bcPair && cdPair) || (bcPair && cdPair && dePair)) {
+        arrayValue = 4;
+    }
+
+    // Check 5 of a kind.
+    if (abPair && bcPair && cdPair && dePair) {
+        arrayValue = 6;
     }
 
     // Check 4 sraight.
     if ((abSeq && bcSeq && cdSeq) || (bcSeq && cdSeq && deSeq)) {
-        array1Value = 5;
+        arrayValue = 5;
     }
 
     // Check 5 straight.
     if (abSeq && bcSeq && cdSeq && deSeq) {
-        array1Value = 7;
+        arrayValue = 7;
     }
 
-    array1.push(array1Value);
+    array.push(arrayValue);
 }
 
 /**
