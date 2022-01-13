@@ -213,32 +213,14 @@ function calculateArray() {
 
     let bigArray = [array1, array2, array3, array4, array5, array6, array7, array8, array9, array10]
 
-    // Build arrays with values in the grid.
-    // for (let i = 0; i < 5; i++) {
-    //     array1.push(diceObject['value0' + i]);
-    //     array2.push(diceObject['value1' + i]);
-    //     array3.push(diceObject['value2' + i]);
-    //     array4.push(diceObject['value3' + i]);
-    //     array5.push(diceObject['value4' + i]);
-    // }
-
-    // Build rows.
+    // Build arrays for each row in the grid.
     for (let j = 0; j < 5; j++) {
         for (let i = 0; i < 5; i++) {
             bigArray[j].push(diceObject['value' +j + i]);
-            console.log(bigArray);
         }
     }
 
-    // for (let i = 0; i < 5; i++) {
-    //     array6.push(diceObject['value' + i + '0']);
-    //     array7.push(diceObject['value' + i + '1']);
-    //     array8.push(diceObject['value' + i + '2']);
-    //     array9.push(diceObject['value' + i + '3']);
-    //     array10.push(diceObject['value' + i + '4']);
-    // }
-
-    // Build columns.
+    // Build arrays for each column in the grid.
     for (let j = 0; j < 5; j++) {
         for (let i = 0; i < 5; i++) {
             bigArray[j + 5].push(diceObject['value' + i + j]);
@@ -246,38 +228,15 @@ function calculateArray() {
     }
 
     // Remove undefined entries.
-    // removeNull(array1);
-    // removeNull(array2);
-    // removeNull(array3);
-    // removeNull(array4);
-    // removeNull(array5);
-    // removeNull(array6);
-    // removeNull(array7);
-    // removeNull(array8);
-    // removeNull(array9);
-    // removeNull(array10);
-
     for (let i = 0; i < 10; i++) {
         removeNull(bigArray[i]);
     }
 
     // Check for different scoring features.
-    // detectPoker(array1);
-    // detectPoker(array2);
-    // detectPoker(array3);
-    // detectPoker(array4);
-    // detectPoker(array5);
-    // detectPoker(array6);
-    // detectPoker(array7);
-    // detectPoker(array8);
-    // detectPoker(array9);
-    // detectPoker(array10);
-
     for (let i = 0; i < 10; i++) {
         detectPoker(bigArray[i]);
     }
 
-    // presentArrayScore(array1, array2, array3, array4, array5, array6, array7, array8, array9, array10);
     presentArrayScore(bigArray);
 }
 
@@ -385,46 +344,6 @@ function presentArrayScore(bigArray) {
         let score = document.getElementById("sum" + i);
         score.textContent = bigArray[i][arrayLength - 1];
     }
-
-    // let a1length = array1.length
-    // let score1 = document.getElementById("sum0");
-    // score1.textContent = array1[a1length - 1];
-
-    // let a2length = array2.length
-    // let score2 = document.getElementById("sum1");
-    // score2.textContent = array2[a2length - 1];
-
-    // let a3length = array3.length
-    // let score3 = document.getElementById("sum2");
-    // score3.textContent = array3[a3length - 1];
-
-    // let a4length = array4.length
-    // let score4 = document.getElementById("sum3");
-    // score4.textContent = array4[a4length - 1];
-
-    // let a5length = array5.length
-    // let score5 = document.getElementById("sum4");
-    // score5.textContent = array5[a5length - 1];
-
-    // let a6length = array6.length
-    // let score6 = document.getElementById("sum5");
-    // score6.textContent = array6[a6length - 1];
-
-    // let a7length = array7.length
-    // let score7 = document.getElementById("sum6");
-    // score7.textContent = array7[a7length - 1];
-
-    // let a8length = array8.length
-    // let score8 = document.getElementById("sum7");
-    // score8.textContent = array8[a8length - 1];
-
-    // let a9length = array9.length
-    // let score9 = document.getElementById("sum8");
-    // score9.textContent = array9[a9length - 1];
-
-    // let a10length = array10.length
-    // let score10 = document.getElementById("sum9");
-    // score10.textContent = array10[a10length - 1];
 
     calculateFinalScore();
 }
