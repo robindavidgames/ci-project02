@@ -277,7 +277,8 @@ function calculateArray() {
         detectPoker(bigArray[i]);
     }
 
-    presentArrayScore(array1, array2, array3, array4, array5, array6, array7, array8, array9, array10);
+    // presentArrayScore(array1, array2, array3, array4, array5, array6, array7, array8, array9, array10);
+    presentArrayScore(bigArray);
 }
 
 /**
@@ -374,49 +375,56 @@ function detectPoker(array) {
 
 /**
  * Presents the score on a row or column.
- * @param array1: the array from which to output the score.
+ * @param bigArray: the array from which to output the score.
  */
-function presentArrayScore(array1, array2, array3, array4, array5, array6, array7, array8, array9, array10) {
+// function presentArrayScore(array1, array2, array3, array4, array5, array6, array7, array8, array9, array10) {
+function presentArrayScore(bigArray) {
 
-    let a1length = array1.length
-    let score1 = document.getElementById("sum0");
-    score1.textContent = array1[a1length - 1];
+    for (let i = 0; i < 10; i++) {
+        let arrayLength = bigArray[i].length;
+        let score = document.getElementById("sum" + i);
+        score.textContent = bigArray[i][arrayLength - 1];
+    }
 
-    let a2length = array2.length
-    let score2 = document.getElementById("sum1");
-    score2.textContent = array2[a2length - 1];
+    // let a1length = array1.length
+    // let score1 = document.getElementById("sum0");
+    // score1.textContent = array1[a1length - 1];
 
-    let a3length = array3.length
-    let score3 = document.getElementById("sum2");
-    score3.textContent = array3[a3length - 1];
+    // let a2length = array2.length
+    // let score2 = document.getElementById("sum1");
+    // score2.textContent = array2[a2length - 1];
 
-    let a4length = array4.length
-    let score4 = document.getElementById("sum3");
-    score4.textContent = array4[a4length - 1];
+    // let a3length = array3.length
+    // let score3 = document.getElementById("sum2");
+    // score3.textContent = array3[a3length - 1];
 
-    let a5length = array5.length
-    let score5 = document.getElementById("sum4");
-    score5.textContent = array5[a5length - 1];
+    // let a4length = array4.length
+    // let score4 = document.getElementById("sum3");
+    // score4.textContent = array4[a4length - 1];
 
-    let a6length = array6.length
-    let score6 = document.getElementById("sum5");
-    score6.textContent = array6[a6length - 1];
+    // let a5length = array5.length
+    // let score5 = document.getElementById("sum4");
+    // score5.textContent = array5[a5length - 1];
 
-    let a7length = array7.length
-    let score7 = document.getElementById("sum6");
-    score7.textContent = array7[a7length - 1];
+    // let a6length = array6.length
+    // let score6 = document.getElementById("sum5");
+    // score6.textContent = array6[a6length - 1];
 
-    let a8length = array8.length
-    let score8 = document.getElementById("sum7");
-    score8.textContent = array8[a8length - 1];
+    // let a7length = array7.length
+    // let score7 = document.getElementById("sum6");
+    // score7.textContent = array7[a7length - 1];
 
-    let a9length = array9.length
-    let score9 = document.getElementById("sum8");
-    score9.textContent = array9[a9length - 1];
+    // let a8length = array8.length
+    // let score8 = document.getElementById("sum7");
+    // score8.textContent = array8[a8length - 1];
 
-    let a10length = array10.length
-    let score10 = document.getElementById("sum9");
-    score10.textContent = array10[a10length - 1];
+    // let a9length = array9.length
+    // let score9 = document.getElementById("sum8");
+    // score9.textContent = array9[a9length - 1];
+
+    // let a10length = array10.length
+    // let score10 = document.getElementById("sum9");
+    // score10.textContent = array10[a10length - 1];
 
     calculateFinalScore();
 }

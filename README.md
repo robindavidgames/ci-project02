@@ -66,7 +66,7 @@ Full House Dice is a JavaScript implementation of an original game that I have d
             removeNull(bigArray[i]);
         }
 
-    This leads to cleaner code which is also extendable in the future, should I increase the number of rows or columns.
+    This leads to cleaner code (about 60 lines shorter) which is also extendable in the future, should I increase the number of rows or columns.
 
 ### Outstanding Bugs and Issues
 
