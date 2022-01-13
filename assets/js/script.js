@@ -52,6 +52,16 @@ function newTurn() {
     // Check if Game Over and remove New Turn button.
     if (roundNumber === 13) {
         document.getElementById('new-turn').remove();
+
+        let newGameButton = document.createElement("input");
+        let buttonWrapper = document.getElementById("dice-roller");
+        newGameButton.classList.add("button");
+        newGameButton.setAttribute("id", "new-game");
+        newGameButton.setAttribute("type", "button");
+        newGameButton.setAttribute("value", "Play Again");
+        // Code for refresh button adapted from https://stackoverflow.com/questions/29884654/button-that-refreshes-the-page-on-click
+        newGameButton.setAttribute("onClick", "window.location.reload();");
+        buttonWrapper.appendChild(newGameButton);
     }
 
     // Reset temporarily blocked spaces.
