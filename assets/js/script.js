@@ -246,28 +246,36 @@ function calculateArray() {
     }
 
     // Remove undefined entries.
-    removeNull(array1);
-    removeNull(array2);
-    removeNull(array3);
-    removeNull(array4);
-    removeNull(array5);
-    removeNull(array6);
-    removeNull(array7);
-    removeNull(array8);
-    removeNull(array9);
-    removeNull(array10);
+    // removeNull(array1);
+    // removeNull(array2);
+    // removeNull(array3);
+    // removeNull(array4);
+    // removeNull(array5);
+    // removeNull(array6);
+    // removeNull(array7);
+    // removeNull(array8);
+    // removeNull(array9);
+    // removeNull(array10);
+
+    for (let i = 0; i < 10; i++) {
+        removeNull(bigArray[i]);
+    }
 
     // Check for different scoring features.
-    detectPoker(array1);
-    detectPoker(array2);
-    detectPoker(array3);
-    detectPoker(array4);
-    detectPoker(array5);
-    detectPoker(array6);
-    detectPoker(array7);
-    detectPoker(array8);
-    detectPoker(array9);
-    detectPoker(array10);
+    // detectPoker(array1);
+    // detectPoker(array2);
+    // detectPoker(array3);
+    // detectPoker(array4);
+    // detectPoker(array5);
+    // detectPoker(array6);
+    // detectPoker(array7);
+    // detectPoker(array8);
+    // detectPoker(array9);
+    // detectPoker(array10);
+
+    for (let i = 0; i < 10; i++) {
+        detectPoker(bigArray[i]);
+    }
 
     presentArrayScore(array1, array2, array3, array4, array5, array6, array7, array8, array9, array10);
 }

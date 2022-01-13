@@ -49,21 +49,22 @@ Full House Dice is a JavaScript implementation of an original game that I have d
 
 * The game initially handled scoring by working with 10 seperate arrays (one for each row and column), but these could not be iterated though, causing code that looked like this.
 
-        for (let i = 0; i < 5; i++) {
-            array1.push(diceObject['value0' + i]);
-            array2.push(diceObject['value1' + i]);
-            array3.push(diceObject['value2' + i]);
-            array4.push(diceObject['value3' + i]);
-            array5.push(diceObject['value4' + i]);
-        }
+        removeNull(array1);
+        removeNull(array2);
+        removeNull(array3);
+        removeNull(array4);
+        removeNull(array5);
+        removeNull(array6);
+        removeNull(array7);
+        removeNull(array8);
+        removeNull(array9);
+        removeNull(array10);
 
     I combined all the arrays into a single array which let me create iteratable code. 
     
-        for (let j = 0; j < 5; j++) {
-                for (let i = 0; i < 5; i++) {
-                    bigArray[j].push(diceObject['value' +j + i]);
-                }
-            }
+        for (let i = 0; i < 10; i++) {
+            removeNull(bigArray[i]);
+        }
 
     This leads to cleaner code which is also extendable in the future, should I increase the number of rows or columns.
 
