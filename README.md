@@ -61,8 +61,15 @@ Screenshot from ami.responsivedesign.is
 * A scoring cheat-sheet is to the right of the play area, so that users can always see their objectives.
 * Full rules to the game are below the play area.
 * The site has a custom favicon.
+* The game uses "defensive design" principles which ensure that the user cannot easily or accidentally cheat. They cannot place dice in blocked spaces, they cannot place the same dice multiple times, and they cannot activate spaces without having first chosen a dice to use.
 
 ## Testing
+
+* The site functions as expected.
+* All internal and external links work.
+* The design is responsive to screen size.
+* The JavaScript code works as expected, excuting the game rules as planned.
+* The site has been tested on multiple browers (Firefox and Chrome) and multiple mobile platforms (Android and iOS).
 
 ## Bugs and Issues
 
