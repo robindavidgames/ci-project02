@@ -230,5 +230,61 @@ li {
 }
 
 @media screen and (max-width: 660px) {
+    .button {
+        font-size: medium;
+    }
 
+    #score-information {
+        font-size: small;
+        /* width: 30% */
+        float: none;
+        clear: both;
+        margin-left: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #play-area {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 505px) {
+    #score-container {
+        float: none;
+        font-size: medium;
+        clear: both;
+    }
+}
+
+@media screen and (max-width: 410px) {
+    .die, .sumDie {
+        height: 35px;
+        width: 35px;
+        margin: 5px;
+        /* font-size: larger; */
+        /* font-weight: 700; */
+        line-height: 35px;
+        /* border-radius: 5px; */
+    }
+
+    .button {
+        height: 35px;
+        line-height: 35px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .die, .sumDie {
+        height: 30px;
+        width: 30px;
+        margin: 5px;
+        line-height: 30px;
+    }
+
+    .button {
+        height: 30px;
+        line-height: 30px;
+    }
 }
