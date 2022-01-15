@@ -9,7 +9,6 @@
 
 /* Keep page content in a narrow column. */
 body {
-    /* width: 750px; */
     width: 90vw;
     max-width: 750px;
 
@@ -42,8 +41,6 @@ li {
 #info-container {
     background-color: #FFCBCB;
     border-radius: 15px;
-    /* padding: 20px; */
-    /* width: 710px; */
     width: 100%;
     max-width: 750px;
     padding: 20px;
@@ -89,17 +86,11 @@ li {
 #play-area {
     background-color: #D9D7F1;
     border-radius: 15px;
-    /* padding: 20px; */
-    /* width: 420px; */
-
     padding: 20px;
     width: 66%;
     max-width: 460px;
     box-sizing: border-box;
-    
-
     margin: 0 auto;
-    /* height: 450px; */
     clear: both;
     margin-bottom: 20px;
     float: left;
@@ -108,18 +99,13 @@ li {
 /* Scoring cheat-sheet aligned to the right. */
 #score-information {
     float: right;
-    /* width: 230px; */
-
     max-width: 290px;
     width: 34%;
     padding: 20px;
     margin-left: 20px;
     box-sizing: border-box;
-
     background-color: #E7FBBE;
     border-radius: 15px;
-    /* padding: 20px; */
-    /* margin-left: 20px; */
     margin-bottom: 20px;
 }
 
@@ -146,15 +132,7 @@ li {
 }
 
 .die {
-    /* height: 50px; */
-    /* width: 50px; */
     background-color: whitesmoke;
-    /* float: left;
-    margin: 10px;
-    text-align: center;
-    font-size: larger;
-    font-weight: 700;
-    line-height: 50px; */
     border-radius: 5px;
 }
 
@@ -163,15 +141,7 @@ li {
 }
 
 .sumDie {
-    /* height: 50px; */
-    /* width: 50px; */
     background-color: burlywood;
-    /* float: left;
-    margin: 10px;
-    text-align: center;
-    font-size: larger;
-    font-weight: 700;
-    line-height: 50px; */
     color: blue;
 }
 
@@ -204,10 +174,7 @@ li {
         height: 40px;
         width: 40px;
         margin: 7px;
-        /* font-size: larger; */
-        /* font-weight: 700; */
         line-height: 40px;
-        /* border-radius: 5px; */
     }
 
     #play-area {
@@ -220,12 +187,7 @@ li {
 
     .button {
         height: 40px;
-        /* margin: 10px; */
-        /* font-size: larger; */
-        /* font-weight: 400; */
         line-height: 40px;
-        /* border-radius: 5px; */
-        /* padding: 0px 10px; */
     }
 }
 
@@ -236,7 +198,6 @@ li {
 
     #score-information {
         font-size: small;
-        /* width: 30% */
         float: none;
         clear: both;
         margin-left: 0;
@@ -263,10 +224,7 @@ li {
         height: 35px;
         width: 35px;
         margin: 5px;
-        /* font-size: larger; */
-        /* font-weight: 700; */
         line-height: 35px;
-        /* border-radius: 5px; */
     }
 
     .button {
