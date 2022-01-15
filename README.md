@@ -72,6 +72,10 @@ Full House Dice is a JavaScript implementation of an original game that I have d
 
 ## Validator Testing
 
+JSHint.com reports no unresolved issues in the Javascript code.
+
+![Image of JSHint report.](.assets/images/readme/JSHint.jpg)
+
 ## Deployment
 
 ## Technologies Used

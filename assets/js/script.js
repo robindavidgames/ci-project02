@@ -221,7 +221,7 @@ function calculateArray() {
     let array9 = [];
     let array10 = [];
 
-    let bigArray = [array1, array2, array3, array4, array5, array6, array7, array8, array9, array10]
+    let bigArray = [array1, array2, array3, array4, array5, array6, array7, array8, array9, array10];
 
     // Build arrays for each row in the grid.
     for (let j = 0; j < 5; j++) {
@@ -265,7 +265,7 @@ function removeNull(array) {
     array.splice(0 , len);
 
     // Sort array contents in ascending order. Adapted from https://www.w3schools.com/jsref/jsref_sort.asp
-    array.sort(function(a, b){return a-b});
+    array.sort(function(a, b){return a-b;});
     return;
 }
 
@@ -365,7 +365,7 @@ function calculateFinalScore() {
 
     let sumDieSpaces = [];
     for (let i = 0; i < 10; i++) {
-        temp = parseInt(document.getElementById('sum' + i).innerText);
+        let temp = parseInt(document.getElementById('sum' + i).innerText);
         sumDieSpaces.push(temp);
     }
 
