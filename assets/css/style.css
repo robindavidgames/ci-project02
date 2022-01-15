@@ -84,7 +84,7 @@ li {
     padding: 20px;
     width: 420px;
     margin: 0 auto;
-    height: 450px;
+    /* height: 450px; */
     clear: both;
     margin-bottom: 20px;
     float: left;
@@ -157,7 +157,68 @@ li {
 
 /* Responsive design */
 
-/* For screens with width 760px and below */
-@media screen and (max-width: 760px) {
+/* For screens with width 780px and below */
+@media screen and (max-width: 780px) {
 
+    /* Keep page content in a narrow column. */
+    body {
+        width: 650px;
+    }
+
+    /* Div containing round information, dice rolling button, and dice results. */
+    #info-container {
+        /* border-radius: 15px; */
+        width: 610px;
+        /* height: 100px; */
+    }
+
+    .button {
+        height: 40px;
+        /* font-size: larger; */
+        line-height: 40px;
+        /* border-radius: 5px; */
+    }
+
+    /* Contains score information. */
+    /* #score-container {
+        font-size: larger;
+    } */
+
+    /* Play area aligned to the left. */
+    #play-area {
+        /* border-radius: 15px; */
+        width: 324px;
+        /* height: 450px; */
+    }
+
+    /* Scoring cheat-sheet aligned to the right. */
+    #score-information {
+        width: 226px;
+        /* border-radius: 15px;
+        padding: 20px; */
+    }
+
+    /* Text in the play area. */
+    /* #assign-dice {
+        line-height: 30px;
+    } */
+
+    /* Establish style for all die and number boxes. */
+    .die {
+        height: 40px;
+        width: 40px;
+        margin: 7px;
+        /* font-size: larger; */
+        line-height: 40px;
+        /* border-radius: 5px; */
+    }
+
+    .sumDie {
+        height: 40px;
+        width: 40px;
+        margin: 7px;
+        /* font-size: larger; */
+        line-height: 40px;
+    }
 }
+
