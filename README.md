@@ -1,7 +1,12 @@
 # README for Full House Dice JavaScript Project
 
 ## Introductions
-Full House Dice is a JavaScript implementation of an original game that I have designed. It is a casual game for a general audience.
+Full House Dice is a JavaScript implementation of an original game that I have designed. It is a casual game for a general audience. Players roll dice and place the dice values in a grid, in order to create poker-style number combinations. 
+
+Click here to play [Full House Dice](https://robindavidgames.github.io/ci-project02/).
+
+![Image of responsive design.](/assets/images/readme/am_i_responsive.jpg)
+Screenshot from ami.responsivedesign.is
 
 ## Features
 * Javascript code to dynamically create the play-area elements. This could have been achieved by creating 35 divs, but I wanted to see if I could use the JavaScript code to create simpler HTML. Conceivably, I could expand or contract the number of divs in the play area with no change to the HTML.
@@ -74,9 +79,31 @@ Full House Dice is a JavaScript implementation of an original game that I have d
 
 JSHint.com reports no unresolved issues in the Javascript code.
 
-![Image of JSHint report.](.assets/images/readme/JSHint.jpg)
+![Image of JSHint report.](/assets/images/readme/JSHint.jpg)
 
 ## Deployment
+
+Full House Dice has been deployed on GitHub Pages. The process for doing so is as follows.
+
+1. Open the project in GitHub.
+
+![Image of project page on GitHub.](/assets/images/readme/github1.png)
+
+2. Click on Settings and Pages.
+
+![Image of Pages tab on GitHub.](/assets/images/readme/github2.png)
+
+3. Select the branch, "main".
+
+![Image of choosing branch.](/assets/images/readme/github3.png)
+
+4. Click "save".
+
+![Image of final settings for deployed page.](/assets/images/readme/github4.png)
+
+5. The site is now deployed and may be accessed at the assigned link.
+
+![Image of deployed page details.](/assets/images/readme/github5.png)
 
 ## Technologies Used
 * Javascript, CSS and HTML.
