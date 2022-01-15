@@ -154,3 +154,10 @@ li {
 #value10, #value20, #value30, #value40, #sum5 {
     clear: both;
 }
+
+/* Responsive design */
+
+/* For screens with width 760px and below */
+@media screen and (max-width: 760px) {
+
+}
