@@ -134,16 +134,27 @@ li {
 }
 
 /* Establish style for all die and number boxes. */
-.die {
+.die, .sumDie {
     height: 50px;
     width: 50px;
-    background-color: whitesmoke;
     float: left;
     margin: 10px;
     text-align: center;
     font-size: larger;
     font-weight: 700;
     line-height: 50px;
+}
+
+.die {
+    /* height: 50px; */
+    /* width: 50px; */
+    background-color: whitesmoke;
+    /* float: left;
+    margin: 10px;
+    text-align: center;
+    font-size: larger;
+    font-weight: 700;
+    line-height: 50px; */
     border-radius: 5px;
 }
 
@@ -152,15 +163,15 @@ li {
 }
 
 .sumDie {
-    height: 50px;
-    width: 50px;
+    /* height: 50px; */
+    /* width: 50px; */
     background-color: burlywood;
-    float: left;
+    /* float: left;
     margin: 10px;
     text-align: center;
     font-size: larger;
     font-weight: 700;
-    line-height: 50px;
+    line-height: 50px; */
     color: blue;
 }
 
@@ -181,4 +192,43 @@ li {
 
 /* For screens with width 810px and below */
 @media screen and (max-width: 810px) {
+    #score-information {
+        float: left;
+        margin-left: 20px;
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .die, .sumDie {
+        height: 40px;
+        width: 40px;
+        margin: 7px;
+        /* font-size: larger; */
+        /* font-weight: 700; */
+        line-height: 40px;
+        /* border-radius: 5px; */
+    }
+
+    #play-area {
+        max-width: 365px;
+    }
+
+    #score-information {
+        width: 34%;
+    }
+
+    .button {
+        height: 40px;
+        /* margin: 10px; */
+        /* font-size: larger; */
+        /* font-weight: 400; */
+        line-height: 40px;
+        /* border-radius: 5px; */
+        /* padding: 0px 10px; */
+    }
+}
+
+@media screen and (max-width: 660px) {
+
 }
