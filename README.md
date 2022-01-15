@@ -9,17 +9,58 @@ Click here to play [Full House Dice](https://robindavidgames.github.io/ci-projec
 Screenshot from ami.responsivedesign.is
 
 ## Features
-* Javascript code to dynamically create the play-area elements. This could have been achieved by creating 35 divs, but I wanted to see if I could use the JavaScript code to create simpler HTML. Conceivably, I could expand or contract the number of divs in the play area with no change to the HTML.
+* The core game consists of two interacting sections - one section that contains rolled dice and one section in which those dice are played. The panel on the right is a non-interactive information panel.
+
+![Image of interactive part of the site.](/assets/images/readme/features01.png)
+
+* Javascript code to dynamically create the play-area elements. This could have been achieved by creating 35 divs, but I wanted to challenge myself to use the JavaScript code to create simpler HTML. Conceivably, I could expand or contract the number of divs in the play area with no change to the HTML.
+
+![Image of divs created through JavaScript.](/assets/images/readme/features02.png)
+
 * A dice-rolling section, which keeps track of round number, total score, and available dice. Players can press the "Roll Dice" button to generate 2 new dice values, randomly numbered between 1 and 6. 
+
+![Image of dice rolling part of the site.](/assets/images/readme/features03.png)
+
 * The round number will also update at this point. 
-* The score area updates dynamically as players put their dice values into the play area. The "Roll Dice" button disappears at the end of the game, ensuring the player cannot play more than 13 rounds.
+
+![Image of updating round number.](/assets/images/readme/features04.png)
+
+* The score area updates dynamically as players put their dice values into the play area.
+
+![Image of updating score area.](/assets/images/readme/features05.png)
+
 * A play-area, in which players will allocate their dice values. This forms the bulk of the JavaScript code. Players take the dice from the dice-rolling section and put them into this grid by clicking on the dice and then clicking on an available square.
+
+![Image of play area with some placed values.](/assets/images/readme/features06.png)
+
 * The grid updates dynamically, blocking out specific spaces, accoring to the game rules, after each action. These spaces are then reset every turn. 
-* The two rolled dice update when they are used, so that they may not be used more than once each. Their colours change to clearly indicate to the user what their status is - yellow to indicate they are currently being used, red to indicate that have been used in that turn.
+
+![Image of play area after resetting for a new round.](/assets/images/readme/features07.png)
+
+* The two rolled dice update when they are used, so that they may not be used more than once each. Their colours change to clearly indicate to the user what their status is - green to indicate they are currently being used, red to indicate that have been used in that turn. These colours were chosen because they have clear associations of "proceed" and "stop".
+
+![Image of green "clicked" dice.](/assets/images/readme/features08.png)
+![Image of red "used" dice.](/assets/images/readme/features09.png)
+
+* The player is able to select a dice and then change their mind and select the other dice. Once they click on the play area, they dice is "used" and turns red. The player may not affect the play area before choosing a dice and turning it green.
+
+![Image of yellow selected dice.](/assets/images/readme/features10.png)
+![Image of choosing the other dice.](/assets/images/readme/features11.png)
+![Image of a used dice and a selected dice.](/assets/images/readme/features12.png)
+
 * The values from each row and column in the grid are placed into arrays that are scored according to the rules of poker. 
 * The scores for each row and column are updated dynamically and placed into a box at the end of each row and column. The total score for all of these rows and columns are updated at the top of the page.
+
+![Image of row and column scores being updated.](/assets/images/readme/features13.png)
+![Image of row and column scores being updated.](/assets/images/readme/features16.png)
+
+* The "Roll Dice" button disappears at the end of the game, ensuring the player cannot play more than 13 rounds. Once 13 rounds have been played, a new button appears that lets the player restart the game.
+
+![Image of New Game button.](/assets/images/readme/features17.png)
+
 * A scoring cheat-sheet is to the right of the play area, so that users can always see their objectives.
 * Full rules to the game are below the play area.
+* The site has a custom favicon.
 
 ## Testing
 
@@ -74,6 +115,8 @@ Screenshot from ami.responsivedesign.is
     This leads to cleaner code (about 60 lines shorter) which is also extendable in the future, should I increase the number of rows or columns.
 
 ### Outstanding Bugs and Issues
+
+No outstanding bugs or issues.
 
 ## Validator Testing
 
