@@ -77,9 +77,21 @@ Screenshot from ami.responsivedesign.is
 
 ## Validator Testing
 
-JSHint.com reports no unresolved issues in the Javascript code.
+1. The website has passed the HTML validator without issue. [Link](https://validator.w3.org/nu/?doc=https%3A%2F%2Frobindavidgames.github.io%2Fci-project02%2F)
+
+2. The website has passed the CSS validator without issue. [Link](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Frobindavidgames.github.io%2Fci-project02%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+
+3. JSHint.com reports no unresolved issues in the Javascript code.
 
 ![Image of JSHint report.](/assets/images/readme/JSHint.jpg)
+
+4. The website scored 100/100 on Lighthouse testing for Desktop.
+
+![Image of JSHint report.](/assets/images/readme/lighthouse_desktop.png)
+
+5. The website scored 99/100 on Lighthouse testing for Mobile.
+
+![Image of JSHint report.](/assets/images/readme/lighthouse_mobile.png)
 
 ## Deployment
 
