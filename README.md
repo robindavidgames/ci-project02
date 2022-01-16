@@ -1,9 +1,9 @@
 # README for Full House Dice JavaScript Project
 
 ## Introductions
-Full House Dice is a JavaScript implementation of an original game that I have designed. It is a casual game for a general audience. Players roll dice and place the dice values in a grid, in order to create poker-style number combinations. 
+Full House Dice is a JavaScript implementation of an original game that I have designed. It is a casual game for a general audience. Players roll dice and place the dice values in a grid, in order to create poker-style number combinations for each row and column. Players receieve a total score depending on how well they place their dice over the 13 game turns. 
 
-Click here to play [Full House Dice](https://robindavidgames.github.io/ci-project02/).
+**Click here to visit the [Full House Dice](https://robindavidgames.github.io/ci-project02/) webpage.**
 
 ![Image of responsive design.](/assets/images/readme/am_i_responsive.jpg)
 Screenshot from ami.responsivedesign.is
@@ -189,3 +189,4 @@ Ie, where code snippets come from.
 
 ### Media
 * Favicon is "Perspective dice 6 faces 1 icon" by Delapouite under CC BY 3.0. Taken from [Game-Icons.net](https://game-icons.net/1x1/delapouite/perspective-dice-six-faces-one.html) (update this with a transparent background and smaller margins)
+* All game text is my own original content.
