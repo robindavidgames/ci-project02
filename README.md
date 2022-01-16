@@ -74,9 +74,9 @@ Screenshot from ami.responsivedesign.is
 ## Bugs and Issues
 
 ### Fixed Bugs and Issues
-* In the calculateArray JavaScript function, values in an array are compared to see if they meet different poker hand requirements. However, if spaces on the board were left empty, this function was allowing the "null" spaces to act as Pair, Five of a Kind, etc. To fix this, I created placeholder arrays for each row and column, with unique entries in each space, therefore removing "null" entries.
-* Users were able to click the same div repeatedly, changing the value within. To prevent this, I put the function details within an if loop checking if this.classList.contains("play-space"). Within that loop, the play-space class is removed from the div, ensuring the loop cannot run a second time. This same technique also allowed me to dynamically block off certain spaces from being used, in accordance with game rules.
-* A function that reset the board each round would use getElementsByClassName() and then iterate on that nodelist to change classnames. Because getElementsByClassName() creates a live nodelist, changing the classnames was altering the nodelist and causing errors and omissions. I asked Slack for help and was pointed to this document: https://developer.mozilla.org/en-US/docs/Web/API/NodeList . I switched from using getElementsByClassName() to using querySelectorAll(), which creates a static nodelist and can be iterated upon without changing the contents.
+* In the calculateArray JavaScript function, values in an array are compared to see if they meet different poker hand requirements. However, if spaces on the board were left empty, this function was allowing the "null" spaces to act as Pair, Five of a Kind, etc. To fix this, I created the removeNull() function, which deletes null entries from an array. It does this by creating a temporary array, copying valid entries, and then overwriting the original array.
+* Users were able to click the same div repeatedly, changing the value within, while game rules state that this shouldn't be possible. To prevent this, I put the function details within an "if" loop checking if this.classList.contains("play-space"). Within that loop, the play-space class is removed from the div, ensuring the loop cannot run a second time. This same technique gave me the flexibility that allowed me to dynamically block off certain spaces from being used each turn, in accordance with game rules.
+* The function that reset the board each round would use getElementsByClassName() and then iterate on that nodelist to change classnames. Because getElementsByClassName() creates a live nodelist, changing the classnames was altering the nodelist and causing errors and omissions. I asked Slack for help and was pointed to [this document](https://developer.mozilla.org/en-US/docs/Web/API/NodeList). I switched from using getElementsByClassName() to using querySelectorAll(), which creates a static nodelist and can be iterated upon without changing the contents.
 * Code to check for poker combinations was extremely long and repetitive. I implemented a series of variables that would check contents of a given array for repeated numbers and numbers in sequence. I was able to turn code that looked like this:
 
         let array1ThreeStraightPair = (array1[0] === array1[1] + 1 && array1[1] === array1[2] + 1 && array1[0] !== undefined && array1[3] === array1[4] && array1[3] !== undefined) || (array1[2] === array1[3] + 1 && array1[3] === array1[4] + 1 && array1[2] !== undefined && array1[0] === array1[1] && array1[0] !== undefined);
@@ -88,19 +88,17 @@ Screenshot from ami.responsivedesign.is
         if ((abSeq && bcSeq && dePair) || (cdSeq && deSeq && abPair)) { ...
 
 * Users were able to use the same dice repeatedly, placing more than 2 numbers each turn. To fix this, I created a system of adding class names (clickedDie and usedDie) to dice that had been used and placing "if" statements around the code for using those dice. These statements checked which classes were assigned to the dice and if they could be used again. This also allowed me to create CSS rules for those classes, updating the colours of dice as they were clicked and used, improving the user experience.
-* A line in the removeNull function was prompting an error in JSHint.
+* A line in the removeNull function was prompting an error in JSHint:
     
         array[j] && array.push(array[j]);
     
-    I updated the line to use more conventional syntax.
+    I updated the line to use more conventional syntax. This also benefits from being more "human readable":
 
         if (array[j]) {
-
             array.push(array[j]);
-
         }
 
-* The game initially handled scoring by working with 10 seperate arrays (one for each row and column), but these could not be iterated though, causing code that looked like this.
+* The game initially handled scoring by working with 10 seperate arrays (one for each row and column), but these could not be iterated though, leading me to use code that looked like this.
 
         removeNull(array1);
         removeNull(array2);
@@ -119,7 +117,7 @@ Screenshot from ami.responsivedesign.is
             removeNull(bigArray[i]);
         }
 
-    This leads to cleaner code (about 60 lines shorter) which is also extendable in the future, should I increase the number of rows or columns.
+    This leads to cleaner code (about 60 lines shorter) which is also more easily extendable in the future, should I increase the number of rows or columns used in the game.
 
 ### Outstanding Bugs and Issues
 
@@ -168,9 +166,14 @@ Full House Dice has been deployed on GitHub Pages. The process for doing so is a
 ![Image of deployed page details.](/assets/images/readme/github5.png)
 
 ## Technologies Used
-* Javascript, CSS and HTML.
+* Javascrip
+* CSS
+* HTML
 * GitHub
 * GitPod
+* GitHub Pages
+* Firefox developer tools
+* Chrome developer tools
 
 ## Credits
 
@@ -178,4 +181,4 @@ Full House Dice has been deployed on GitHub Pages. The process for doing so is a
 Ie, where code snippets come from.
 
 ### Media
-* Favicon is "Perspective dice 6 faces 1 icon" by Delapouite under CC BY 3.0. Taken from https://game-icons.net/1x1/delapouite/perspective-dice-six-faces-one.html (update this with a transparent background and smaller margins)
+* Favicon is "Perspective dice 6 faces 1 icon" by Delapouite under CC BY 3.0. Taken from [Game-Icons.net](https://game-icons.net/1x1/delapouite/perspective-dice-six-faces-one.html) (update this with a transparent background and smaller margins)

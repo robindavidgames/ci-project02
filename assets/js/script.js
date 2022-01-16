@@ -106,11 +106,14 @@ function randomiseDice() {
  * Allows user to click on first die.
  */
 function selectDice1() {
-    if (!document.getElementById('die1').classList.contains("usedDie")) {
-        playerValue = parseInt(document.getElementById('die1').innerText);
-        document.getElementById('die1').classList.add("clickedDie");
-        if (document.getElementById('die2').classList.contains("clickedDie")) {
-            document.getElementById('die2').classList.remove("clickedDie");
+    let die1 = document.getElementById('die1');
+    let die2 = document.getElementById('die2');
+
+    if (!die1.classList.contains("usedDie")) {
+        playerValue = parseInt(die1.innerText);
+        die1.classList.add("clickedDie");
+        if (die2.classList.contains("clickedDie")) {
+            die2.classList.remove("clickedDie");
         }
     }
 }
@@ -119,11 +122,14 @@ function selectDice1() {
  * Allows user to click on second die.
  */
  function selectDice2() {
-    if (!document.getElementById('die2').classList.contains("usedDie")) {
-        playerValue = parseInt(document.getElementById('die2').innerText);
-        document.getElementById('die2').classList.add("clickedDie");
-        if (document.getElementById('die1').classList.contains("clickedDie")) {
-            document.getElementById('die1').classList.remove("clickedDie");
+    let die1 = document.getElementById('die1');
+    let die2 = document.getElementById('die2');
+
+    if (!die2.classList.contains("usedDie")) {
+        playerValue = parseInt(die2.innerText);
+        die2.classList.add("clickedDie");
+        if (die1.classList.contains("clickedDie")) {
+            die1.classList.remove("clickedDie");
         }
     }
 }
