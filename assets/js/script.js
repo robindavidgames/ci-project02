@@ -109,7 +109,7 @@ function selectDice1() {
     let die1 = document.getElementById('die1');
     let die2 = document.getElementById('die2');
 
-    if (!die1.classList.contains("usedDie")) {
+    if (!die1.classList.contains("usedDie") && die1.textContent !== "") {
         playerValue = parseInt(die1.innerText);
         die1.classList.add("clickedDie");
         if (die2.classList.contains("clickedDie")) {
@@ -125,7 +125,7 @@ function selectDice1() {
     let die1 = document.getElementById('die1');
     let die2 = document.getElementById('die2');
 
-    if (!die2.classList.contains("usedDie")) {
+    if (!die2.classList.contains("usedDie") && die1.textContent !== "") {
         playerValue = parseInt(die2.innerText);
         die2.classList.add("clickedDie");
         if (die1.classList.contains("clickedDie")) {

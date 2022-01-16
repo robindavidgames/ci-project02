@@ -88,6 +88,10 @@ Screenshot from ami.responsivedesign.is
         if ((abSeq && bcSeq && dePair) || (cdSeq && deSeq && abPair)) { ...
 
 * Users were able to use the same dice repeatedly, placing more than 2 numbers each turn. To fix this, I created a system of adding class names (clickedDie and usedDie) to dice that had been used and placing "if" statements around the code for using those dice. These statements checked which classes were assigned to the dice and if they could be used again. This also allowed me to create CSS rules for those classes, updating the colours of dice as they were clicked and used, improving the user experience.
+* PLayers were able to click on the dice rolling divs, changing their colour to green, without actually rolling the dice to begin the game. While they couldn't place the empty values into the play area, people who tested the page for me highlighted that it felt wrong. I added a simple "if" statement to make sure that the divs contained text before reacting to player clicks.
+
+        if (!die1.classList.contains("usedDie") && die1.textContent !== "") { ...
+
 * A line in the removeNull function was prompting an error in JSHint:
     
         array[j] && array.push(array[j]);
@@ -174,6 +178,9 @@ Full House Dice has been deployed on GitHub Pages. The process for doing so is a
 * GitHub Pages
 * Firefox developer tools
 * Chrome developer tools
+* JSHint
+* W3 HTML Validator
+* W3 CSS Validator
 
 ## Credits
 
