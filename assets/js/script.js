@@ -30,6 +30,7 @@ function createPlayArea() {
         let sumElement = document.createElement("div");
         sumElement.classList.add("sumDie");
         sumElement.setAttribute("id", "sum"+h);
+        sumElement.textContent = "0";
         dieWrapper.appendChild(sumElement);
     }
     // Create one final set of 5 column summative dice containers.
@@ -37,6 +38,7 @@ function createPlayArea() {
         let sumElement = document.createElement("div");
         sumElement.classList.add("sumDie");
         sumElement.setAttribute("id", "sum"+j);
+        sumElement.textContent = "0";
         dieWrapper.appendChild(sumElement);
     }
 }
@@ -106,7 +108,6 @@ function randomiseDice() {
 function selectDice1() {
     if (!document.getElementById('die1').classList.contains("usedDie")) {
         playerValue = parseInt(document.getElementById('die1').innerText);
-        console.log("Die value chosen is " + playerValue);
         document.getElementById('die1').classList.add("clickedDie");
         if (document.getElementById('die2').classList.contains("clickedDie")) {
             document.getElementById('die2').classList.remove("clickedDie");
@@ -120,7 +121,6 @@ function selectDice1() {
  function selectDice2() {
     if (!document.getElementById('die2').classList.contains("usedDie")) {
         playerValue = parseInt(document.getElementById('die2').innerText);
-        console.log("Die value chosen is " + playerValue);
         document.getElementById('die2').classList.add("clickedDie");
         if (document.getElementById('die1').classList.contains("clickedDie")) {
             document.getElementById('die1').classList.remove("clickedDie");
@@ -140,7 +140,6 @@ clickDie2.addEventListener("click", selectDice2);
  * Allows user to place values in the play spaces.
  */
 function assignDice() {
-    console.log("User clicked div with ID " + this.id);
 
     // If loop checks if the div has not been blocked or already been used.
     if (this.classList.contains("play-space") && !this.classList.contains("used-play-space") && playerValue != "") {
@@ -371,8 +370,6 @@ function calculateFinalScore() {
 
     // Adapted from https://stackoverflow.com/questions/1230233/how-to-find-the-sum-of-an-array-of-numbers
     let totalScore = sumDieSpaces.reduce(function(a, b) { return a + b; }, 0);
-
-    console.log("Total score is " + totalScore);
 
     // Update score text on page.
     document.getElementById('total-score').textContent = `Your total score is ${totalScore}.`;
