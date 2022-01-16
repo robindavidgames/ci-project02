@@ -188,6 +188,7 @@ li {
     .button {
         height: 40px;
         line-height: 40px;
+        margin: 7px;
     }
 }
 
@@ -230,6 +231,7 @@ li {
     .button {
         height: 35px;
         line-height: 35px;
+        margin: 5px;
     }
 }
 
