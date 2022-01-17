@@ -215,7 +215,10 @@ Full House Dice has been deployed on GitHub Pages. The process for doing so is a
 ## Credits
 
 ### Content
-Ie, where code snippets come from.
+* spript.js, line 65. Code for the New Game button adapted from [StackOverflow](https://stackoverflow.com/questions/29884654/button-that-refreshes-the-page-on-click).
+* script.js, line 264. Code for removeNull function adapted from [StackOverflow](https://stackoverflow.com/questions/281264/remove-empty-elements-from-an-array-in-javascript).
+* script.js, line 274. Code for sorting array contents in ascending order adapted from [W3Schools](https://www.w3schools.com/jsref/jsref_sort.asp).
+* script.js, line 379. Code for calculating total value of an array adapted from [StackOverflow](https://stackoverflow.com/questions/1230233/how-to-find-the-sum-of-an-array-of-numbers).
 
 ### Media
 * Favicon is "Perspective dice 6 faces 1 icon" by Delapouite under CC BY 3.0. Taken from [Game-Icons.net](https://game-icons.net/1x1/delapouite/perspective-dice-six-faces-one.html) (update this with a transparent background and smaller margins)

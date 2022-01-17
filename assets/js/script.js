@@ -61,7 +61,7 @@ function newTurn() {
         newGameButton.setAttribute("id", "new-game");
         newGameButton.setAttribute("type", "button");
         newGameButton.setAttribute("value", "Play Again");
-        // Code for refresh button adapted from https://stackoverflow.com/questions/29884654/button-that-refreshes-the-page-on-click
+        // Code for refresh page button adapted from https://stackoverflow.com/questions/29884654/button-that-refreshes-the-page-on-click
         newGameButton.setAttribute("onClick", "window.location.reload();");
         buttonWrapper.appendChild(newGameButton);
     }
@@ -375,7 +375,7 @@ function calculateFinalScore() {
         sumDieSpaces.push(temp);
     }
 
-    // Adapted from https://stackoverflow.com/questions/1230233/how-to-find-the-sum-of-an-array-of-numbers
+    // Code for calculating total value of an array adapted from https://stackoverflow.com/questions/1230233/how-to-find-the-sum-of-an-array-of-numbers
     let totalScore = sumDieSpaces.reduce(function(a, b) { return a + b; }, 0);
 
     // Update score text on page.
