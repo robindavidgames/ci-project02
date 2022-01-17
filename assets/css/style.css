@@ -11,7 +11,6 @@
 body {
     width: 90vw;
     max-width: 750px;
-
     margin: 0 auto;
     font-family: 'Be Vietnam Pro', sans-serif;
 }
@@ -45,7 +44,6 @@ li {
     max-width: 750px;
     padding: 20px;
     box-sizing: border-box;
-
     margin: 0 auto;
     height: 140px;
     margin-bottom: 20px;
