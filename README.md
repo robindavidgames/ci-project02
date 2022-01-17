@@ -48,7 +48,7 @@ Screenshot from ami.responsivedesign.is
 ![Image of choosing the other dice.](/assets/images/readme/features11.png)
 ![Image of a used dice and a selected dice.](/assets/images/readme/features12.png)
 
-* The values from each row and column in the grid are placed into arrays that are scored according to the rules of poker. 
+* The values from each row and column in the grid are placed into arrays that are scored according to the rules of poker. It doesn't matter in what order the numbers are placed in the play-area as a function rearranges the arrays into ascending order.
 * The scores for each row and column are updated dynamically and placed into a box at the end of each row and column. The total score for all of these rows and columns are updated at the top of the page.
 
 ![Image of row and column scores being updated.](/assets/images/readme/features13.png)
@@ -181,6 +181,8 @@ Full House Dice has been deployed on GitHub Pages. The process for doing so is a
 * JSHint
 * W3 HTML Validator
 * W3 CSS Validator
+* Affinity Designer (for editing favicon)
+* favicon.io
 
 ## Credits
 
