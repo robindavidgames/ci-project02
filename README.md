@@ -257,5 +257,5 @@ Full House Dice has been deployed on GitHub Pages. The process for doing so is a
 * script.js, line 379. Code for calculating total value of an array adapted from [StackOverflow](https://stackoverflow.com/questions/1230233/how-to-find-the-sum-of-an-array-of-numbers).
 
 ### Media
-* Favicon is "Perspective dice 6 faces 1 icon" by Delapouite under CC BY 3.0. Taken from [Game-Icons.net](https://game-icons.net/1x1/delapouite/perspective-dice-six-faces-one.html) (update this with a transparent background and smaller margins)
+* Favicon is "Perspective dice 6 faces 1 icon" by Delapouite under CC BY 3.0. Taken from [Game-Icons.net](https://game-icons.net/1x1/delapouite/perspective-dice-six-faces-one.html)
 * All game text is my own original content.
