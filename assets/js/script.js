@@ -226,6 +226,7 @@ function calculateArray() {
     let array9 = [];
     let array10 = [];
 
+    // Create array of arrays so that they can all be iterated through.
     let bigArray = [array1, array2, array3, array4, array5, array6, array7, array8, array9, array10];
 
     // Build arrays for each row in the grid.

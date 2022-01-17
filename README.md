@@ -61,7 +61,31 @@ Screenshot from ami.responsivedesign.is
 * A scoring cheat-sheet is to the right of the play area, so that users can always see their objectives.
 * Full rules to the game are below the play area.
 * The site has a custom favicon.
-* The game uses "defensive design" principles which ensure that the user cannot easily or accidentally cheat. They cannot place dice in blocked spaces, they cannot place the same dice multiple times, and they cannot activate spaces without having first chosen a dice to use.
+* The game uses "defensive design" principles of validated input which ensure that the user cannot easily or accidentally cheat. They cannot place dice in blocked spaces, they cannot place the same dice multiple times, and they cannot activate spaces without having first chosen a dice to use. I considered adding alerts when players clicked on invalid spaces or tried to take an otherwise invalid action, but I did not feel this fit with the casual nature of the game. The game is so simple, that I think alerts are unnecessary.
+
+## Design
+
+### Visual Design
+
+* I have opted for a clean design, without distractions. The page doesn't use images.
+* There is a motif of rounded edges on the various divs and squares. This is to reflect the shape of dice, which have rounded edges.
+* The divs placed at the end of each row and column, which calculate scores, do not have rounded edges - this is to distinguish them from interactive spaces.
+
+### User Experience Design
+
+* The game uses established conventions for interaction. Users can click a link at the top of the page to read rules, or simply begin playing.
+* Validated input prevents users from breaking the game.
+* Text at the top of the page instructs users how to begin: "Roll the dice to begin." Immediately followed by a "Roll Dice" button.
+* The text then updates to show progress in the game.
+* Text in the play area clearly indicates, "Assign dice here."
+* Clicked dice are coded green and red to suggest "available" and "unavailable" respectively.
+* Unusable spaces are coloured grey and cannot be interacted with.
+
+## Accessibility
+
+* Rather than use images of dice (ie, showing dice pips), I used text values of 1-6. This means the site remains accessible to the visually impaired.
+* There are no images on the site.
+* Colours have a stark contrast between background and foreground.
 
 ## Testing
 
