@@ -61,7 +61,6 @@ function newTurn() {
         newGameButton.setAttribute("id", "new-game");
         newGameButton.setAttribute("type", "button");
         newGameButton.setAttribute("value", "Play Again");
-        // Code for refresh page button adapted from https://stackoverflow.com/questions/29884654/button-that-refreshes-the-page-on-click
         newGameButton.setAttribute("onClick", "window.location.reload();");
         buttonWrapper.appendChild(newGameButton);
     }
@@ -356,7 +355,6 @@ function detectPoker(array) {
  * Presents the score on a row or column.
  * @param bigArray: the array from which to output the score.
  */
-// function presentArrayScore(array1, array2, array3, array4, array5, array6, array7, array8, array9, array10) {
 function presentArrayScore(bigArray) {
 
     for (let i = 0; i < 10; i++) {
