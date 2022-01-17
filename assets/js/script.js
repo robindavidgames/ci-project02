@@ -315,7 +315,7 @@ function detectPoker(array) {
     }
 
     // Check 3 straight.
-    if ((abSeq && bcSeq) || (bcSeq && cdSeq) || (cdSeq && deSeq) || (abSeq && bdSeq) || (bcSeq && ceSeq)) {
+    if ((abSeq && bcSeq) || (bcSeq && cdSeq) || (cdSeq && deSeq) || (abSeq && bdSeq) || (bcSeq && ceSeq) || (bcSeq && cdPair && deSeq)) {
         arrayValue = 3;
     }
 
@@ -340,7 +340,7 @@ function detectPoker(array) {
     }
 
     // Check 4 sraight.
-    if ((abSeq && bcSeq && cdSeq) || (bcSeq && cdSeq && deSeq)) {
+    if ((abSeq && bcSeq && cdSeq) || (bcSeq && cdSeq && deSeq) || (abSeq && bdSeq && deSeq) || (abSeq && bcSeq && ceSeq)) {
         arrayValue = 5;
     }
 
