@@ -3,6 +3,8 @@
 ## Introductions
 Full House Dice is a JavaScript implementation of an original game that I have designed. It is a casual game for a general audience. Players roll dice and place the dice values in a grid, in order to create poker-style number combinations for each row and column. Players receieve a total score depending on how well they place their dice over the 13 game turns. 
 
+The goal of the project is to create a game that can be quickly learnt and played. It uses validated input and feedback to ensure the user cannot "break" the game accidentally and UX principals to ensure the user can quickly grasp possible interaction points.
+
 **Click here to visit the [Full House Dice](https://robindavidgames.github.io/ci-project02/) webpage.**
 
 ![Image of responsive design.](/assets/images/readme/am_i_responsive.jpg)
@@ -61,7 +63,9 @@ Screenshot from ami.responsivedesign.is
 * A scoring cheat-sheet is to the right of the play area, so that users can always see their objectives.
 * Full rules to the game are below the play area.
 * The site has a custom favicon.
-* The game uses "defensive design" principles of validated input which ensure that the user cannot easily or accidentally cheat. They cannot place dice in blocked spaces, they cannot place the same dice multiple times, and they cannot activate spaces without having first chosen a dice to use. I considered adding alerts when players clicked on invalid spaces or tried to take an otherwise invalid action, but I did not feel this fit with the casual nature of the game. The game is so simple, that I think alerts are unnecessary.
+* All external links open in a new tab.
+* HTML code is structured with sematic markup.
+* The game uses "defensive design" principles of validated input which ensure that the user cannot easily or accidentally cheat. They cannot place dice in blocked spaces, they cannot place the same dice multiple times, and they cannot activate spaces without having first chosen a dice to use. I considered adding alerts when players clicked on invalid spaces or tried to take an otherwise invalid action, but I did not feel this fit with the casual nature of the game. The game is so simple, that I think alerts are unnecessary. This might become a future feature.
 
 ## Design
 
