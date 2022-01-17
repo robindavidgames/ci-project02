@@ -295,6 +295,10 @@ function detectPoker(array) {
     let cdSeq = array[2] +1 === array[3];
     let deSeq = array[3] +1 === array[4];
 
+    // More complex sequential checks, in the instance that an additional number breaks the sequence. eg, 2,3,3,4,4 should be 3 straight.
+    let ceSeq = array[2] +1 === array[4];
+    let bdSeq = array[1] +1 === array[3];
+
     // Check single pair.
     if (abPair || bcPair || cdPair || dePair) {
         arrayValue = 1;
@@ -311,7 +315,7 @@ function detectPoker(array) {
     }
 
     // Check 3 straight.
-    if ((abSeq && bcSeq) || (bcSeq && cdSeq) || (cdSeq && deSeq)) {
+    if ((abSeq && bcSeq) || (bcSeq && cdSeq) || (cdSeq && deSeq) || (abSeq && bdSeq) || (bcSeq && ceSeq)) {
         arrayValue = 3;
     }
 
