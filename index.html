@@ -14,40 +14,39 @@
 
     <body>
         <!-- Center aligned title, logo, tagline. -->
-        <div id="header">
+        <header id="header">
             <h1>Full House Dice</h1>
-            <!-- <p>A game by Robin David</p> -->
+        </header>
+        <nav id="navigation">
             <a href="#how-to-play">Game Rules</a> | <a href="http://www.robin-david.com" target="_blank" rel="noopener">More Games by Robin David</a>
-        </div>
+        </nav>
 
-        <!-- <div id=game> -->
+        
 
-            <!-- Cointaining button to begin a new turn, two dice to roll, and total score. -->
-            <div id="info-container">
-                <div id="dice-roller">
-                    <!-- Inner text of round-tracker to update each round. -->
-                    <p id="round-tracker">Roll the dice to begin.</p>
-                    <!-- Divs to show the two dice available each round. -->
-                    <div class="die roller" id="die1"></div>
-                    <div class="die roller" id="die2"></div>
-                    <input type="submit" value="Roll Dice" id="new-turn" class="button">
-                </div>
-                <div id="score-container">
-                    <!-- Contains information about total player score. -->
-                    <p id="total-score">Your total score is 0.</p>
-                </div>
+        <!-- Cointaining button to begin a new turn, two dice to roll, and total score. -->
+        <section id="info-container">
+            <div id="dice-roller">
+                <!-- Inner text of round-tracker to update each round. -->
+                <p id="round-tracker">Roll the dice to begin.</p>
+                <!-- Divs to show the two dice available each round. -->
+                <div class="die roller" id="die1"></div>
+                <div class="die roller" id="die2"></div>
+                <input type="submit" value="Roll Dice" id="new-turn" class="button">
             </div>
-
-            <!-- Containing the main play area, where dice values are assigned. -->
-            <div id="play-area">
-                <p id="assign-dice">Assign dice here.</p>
-                <div id="dice-area"></div>
+            <div id="score-container">
+                <!-- Contains information about total player score. -->
+                <p id="total-score">Your total score is 0.</p>
             </div>
+        </section>
 
-        <!-- </div> -->
+        <!-- Containing the main play area, where dice values are assigned. -->
+        <section id="play-area">
+            <p id="assign-dice">Assign dice here.</p>
+            <div id="dice-area"></div>
+        </section>
 
         <!-- Non-interactive div, providing scoring cheat-sheet. -->
-        <div id="score-information">
+        <aside id="score-information">
             <p>Row and column combinations.</p>
             <ul>
                 <li>5 straight = 7pt</li>
@@ -58,10 +57,10 @@
                 <li>3 of a kind = 3pt</li>
                 <li>Pair (+) = 1pt</li>
             </ul>
-        </div>
+        </aside>
 
         <!-- Non-interactive div, providing rules on how to play the game. -->
-        <div id="how-to-play">
+        <section id="how-to-play">
             <p>Roll both dice and place their values into the 5x5 grid. Your objective is to create poker-style combinations (3-of-a-kind, 2-pair, etc) in each row and column.</p>
             <p>Press "Roll dice" to begin a turn and click on the dice you want to place - it will turn green to let you know it's selected. Then click where you would like to put it in the grid - your dice will turn red to let you know it's been used. Once you have used both dice, press "Roll dice" for the next round.</p> 
             <p>On a single turn, you cannot place both dice values on the same row or column - both numbers must be placed in entirely separate rows and columns from each other. Spaces in the play-area will turn grey to let you know they're unavailable.</p>
@@ -77,7 +76,7 @@
                 <li>Pair (+) = 1pt</li>
             </ul>
             <p>Notice the “+” next to “Pair”. This means that pairs can be scored along with other sequences - ie, another pair, three of a kind, or 3-straight. The pair must be made of values not used in another combination on that row or column.</p>
-        </div>
+        </section>
     
         <script src="assets/js/script.js"></script>
     </body>
